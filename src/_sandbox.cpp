@@ -20,9 +20,9 @@ int main() {
 	chaos::truely<CHAOS_MACHINE_NCG, std::random_device> x(100);
 
 	for (size_t i = 0; i < 5000; i++)
-		printf(">> %p\n", x());
+		printf(">> 0x%016zx\n", (uint64_t)x());
 
-	printf("SEED: %p\n", rd());
+	printf("SEED: 0x%016zx\n", (uint64_t)rd());
 
 	gen << 0x44;
 	gen.push(0x55);
@@ -35,10 +35,10 @@ int main() {
 	uint32_t b, c;
 	gen >> b >> c;
 
-	printf("--> %p\n", b);
-	printf("--> %p\n", c);
-	printf("--> %p\n", gen());
-	printf("--> %p\n", gen.pull());
+	printf("--> 0x%016zx\n", (uint64_t)b);
+	printf("--> 0x%016zx\n", (uint64_t)c);
+	printf("--> 0x%016zx\n", (uint64_t)gen());
+	printf("--> 0x%016zx\n", (uint64_t)gen.pull());
 
 	std::normal_distribution<> d(5, 2);
 

@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
 	READ(argv[1]);
 
 	for (size_t i = 0; i < 5 * 3; i += 3)
-		printf("%p\t%p\t%p\n", gen.pull(), gen.pull(), gen.pull());
+		printf("0x%016zx\t0x%016zx\t0x%016zx\n", gen.pull(), gen.pull(), gen.pull());
 
 	return 0;
 }

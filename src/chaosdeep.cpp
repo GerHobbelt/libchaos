@@ -9,7 +9,7 @@ using namespace std;
 
 CHAOS_MACHINE_NCG mc;
 
-uint32_t checksum(std::ifstream &file) {
+static void checksum(std::ifstream &file) {
 	CHAOS_MACHINE_NCG::size_push word;
 	mc.reset();
 	while (file.read(reinterpret_cast<char *>(&word), sizeof(word)))
@@ -25,5 +25,5 @@ int main(int argc, char **argv) {
 	checksum(file); // FIXME: just for testing...
 
 	for (size_t i = 0; i < 32; i++)
-		printf("%p\t%p\t%p\t%p\n", mc.pull(), mc.pull(), mc.pull(), mc.pull());
+		printf("0x%016zx\t0x%016zx\t0x%016zx\t0x%016zx\n", (uint64_t)mc.pull(), (uint64_t)mc.pull(), (uint64_t)mc.pull(), (uint64_t)mc.pull());
 }

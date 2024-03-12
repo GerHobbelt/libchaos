@@ -11,6 +11,6 @@ int main(void) {
 
 	// PULL
 	machine.pull();
-	c << machine;
+	machine >> c;
 	machine();
 }
