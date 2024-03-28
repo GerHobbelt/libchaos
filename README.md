@@ -1,7 +1,8 @@
 <p align="center">
   <img src="https://raw.github.com/MaciejCzyzewski/retter/master/retter.png" width="128" alt="retter" /><br />
   retter, upholds cryptography<br />
-  It's a collection of hash functions, ciphers, tools, libraries, and materials related to cryptography.
+  It's a collection of hash functions, ciphers, tools, libraries, and materials related to cryptography.<br /><br />
+  <a href="https://github.com/sindresorhus/awesome"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome"></a>
 </p>
 
 ---
@@ -439,6 +440,14 @@ A __cryptographic hash function__ is a hash function which is designed to be dif
     <td>Jean-Philippe Aumasson, Daniel J. Bernstein</td>
     <td><a href="/SipHash">more [⬆]</a></td>
   </tr>
+  <tr>
+    <td>NCG</td>
+    <td>arbitrary</td>
+    <td>state matrix</td>
+    <td>2015</td>
+    <td>Maciej A. Czyzewski</td>
+    <td><a href="/NCG">more [⬆]</a></td>
+  </tr>
 </table>
 
 ### Message authentication codes
@@ -657,6 +666,7 @@ Sage is a free open-source mathematics software system licensed under the GPL. I
   + [pycrypto](https://www.dlitz.net/software/pycrypto/): Widely used package containing various cryptographic modules and functions
   + [Py2 Standard Library Cryptographic Services](https://docs.python.org/2/library/crypto.html): A set of utilities included with Python 2. Attention! Some modules are deprecated (`md5` and `sha`).
   + [Py3 Standard Library Cryptographic Services](https://docs.python.org/3.4/library/crypto.html): A set of utilities included with Python 3. Some API changes (`md5` and `sha` were moved inside the `hashlib` module).
+  + [cryptography](https://github.com/pyca/cryptography): a package designed to expose cryptographic primitives and recipes to Python developers.
 + Javascript
   + [jsHashes](https://github.com/h2non/jshashes): pure JavaScript implementation of the most extended hash algorithms.
   + [javascript-crypto-library](https://github.com/clipperz/javascript-crypto-library): provides web developers with an extensive and efficient set of cryptographic functions.
