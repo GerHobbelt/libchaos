@@ -17,7 +17,11 @@ static void checksum(std::ifstream &file) {
 	mc.push(word);
 }
 
-int main(int argc, char **argv) {
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_deep_main
+#endif
+
+int main(int argc, const char **argv) {
 	mc.set_space(2);
 	mc.set_time(1);
 
@@ -26,4 +30,6 @@ int main(int argc, char **argv) {
 
 	for (size_t i = 0; i < 32; i++)
 		printf("0x%016zx\t0x%016zx\t0x%016zx\t0x%016zx\n", (uint64_t)mc.pull(), (uint64_t)mc.pull(), (uint64_t)mc.pull(), (uint64_t)mc.pull());
+
+	return 0;
 }

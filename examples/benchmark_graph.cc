@@ -97,6 +97,10 @@ typedef std::shuffle_order_engine<std::minstd_rand0, 256> STL_KNUTH_B;
 
 ////////////////////////////////////////////////////////////////////////////////
 
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_benchmark_graph_main
+#endif
+
 int main(void) {
   // CMs
   B_CM(CHAOS_MACHINE_NCG);

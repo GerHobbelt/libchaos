@@ -18,7 +18,11 @@ void READ(const char *filename) {
 		gen.push(block);
 }
 
-int main(int argc, char *argv[]) {
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_file_checksum_main
+#endif
+
+int main(int argc, const char **argv) {
 	if (argc < 2) {
 		printf("%s [filename]\n", argv[0]);
 		return 1;

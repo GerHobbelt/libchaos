@@ -8,6 +8,10 @@
 
 #include <chaos.h>
 
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_sandbox_main
+#endif
+
 int main() {
 	std::random_device rd;
 
@@ -50,4 +54,6 @@ int main() {
 	for (auto p : hist)
 		std::cout << std::fixed << std::setprecision(1) << std::setw(2) << p.first
 		          << ' ' << std::string(p.second / 200, '*') << '\n';
+
+	return 0;
 }

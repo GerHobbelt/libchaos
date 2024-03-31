@@ -22,6 +22,10 @@ double UNIF01_NEXT_ADAPTER3() { return CHAOS_DOUBLE_U32(x_3.next()); }
 double UNIF01_NEXT_ADAPTER4() { return CHAOS_DOUBLE_U32(x_4.next()); }
 double UNIF01_NEXT_ADAPTER5() { return CHAOS_DOUBLE_U32(x_5.next()); }
 
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_tests_library_main
+#endif
+
 int main(void) {
 	std::cout << "=== XORRING ==================================================="
 	          << std::endl;
@@ -47,4 +51,6 @@ int main(void) {
 	          << std::endl;
 	chaos::analysis gen0(UNIF01_NEXT_ADAPTER0);
 	gen0.raport();
+
+	return 0;
 }

@@ -8,6 +8,10 @@
 
 CHAOS_MACHINE_NCG gen;
 
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_normal_dist_diagram_main
+#endif
+
 int main(void) {
 	std::normal_distribution<> d(5, 2);
 	std::map<int, int> hist;
@@ -18,4 +22,6 @@ int main(void) {
 	for (auto p : hist)
 		std::cout << std::fixed << std::setprecision(1) << std::setw(2) << p.first
 		          << ' ' << std::string(p.second / 200, '*') << '\n';
+
+	return 0;
 }
