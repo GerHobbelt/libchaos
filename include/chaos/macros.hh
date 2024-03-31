@@ -56,7 +56,11 @@ namespace chaos { //::chaos ////////////////////////////////////////////////////
 
 // register prng
 
-#define CHAOS_GENERATOR_REGISTER(a, b) typedef chaos::prng<b> CHAOS_PRNG_##a;
+#define CHAOS_GENERATOR_REGISTER(a, b) typedef chaos::prng<b> CHAOS_PRNG_##a
+#define CHAOS_GENERATOR_REGISTER_3PARAM(a, b, T, A, B, C)                         \
+	typedef chaos::prng<b<T, A, B, C>> CHAOS_PRNG_##a
+#define CHAOS_GENERATOR_REGISTER_4PARAM(a, b, T, A, B, C, D)                      \
+	typedef chaos::prng<b<T, A, B, C, D>> CHAOS_PRNG_##a
 
 // register engine
 
@@ -64,7 +68,7 @@ namespace chaos { //::chaos ////////////////////////////////////////////////////
 
 // utils for meta
 
-#define CHAOS_META_DEFINE(a, b) std::string name = a, authors = b;
+#define CHAOS_META_DEFINE(a, b) std::string name = a, authors = b
 
 #define CHAOS_META_NAME(module) ({ module inst; inst.name; })
 #define CHAOS_META_AUTHORS(module) ({ module inst; inst.authors; })
