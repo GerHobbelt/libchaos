@@ -85,7 +85,6 @@ public:
 } //::chaos ////////////////////////////////////////////////////////////////////
 
 CHAOS_GENERATOR_REGISTER(XOROSHIRO128PLUS, chaos::generators::xoroshiro128plus);
-CHAOS_GENERATOR_REGISTER(XOROSHIRO1024STAR,
-                         chaos::generators::xoroshiro1024star);
+CHAOS_GENERATOR_REGISTER(XOROSHIRO1024STAR, chaos::generators::xoroshiro1024star);
 
 #endif // CHAOS_GENERATORS_XOROSHIRO_HH
