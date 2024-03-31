@@ -2,12 +2,14 @@
 #include <iostream>
 #include <random>
 
-extern "C" {
+#if 0
+
+//extern "C" {
 #include "bbattery.h"
 #include "smarsa.h"
 #include "unif01.h"
 #include "util.h"
-}
+//}
 
 CHAOS_MACHINE_NCG x_0;
 CHAOS_MACHINE_XORRING64 x_5;
@@ -25,6 +27,10 @@ double UNIF01_NEXT_ADAPTER2() { return CHAOS_DOUBLE_U32(x_2.next()); }
 double UNIF01_NEXT_ADAPTER3() { return CHAOS_DOUBLE_U32(x_3.next()); }
 double UNIF01_NEXT_ADAPTER4() { return CHAOS_DOUBLE_U32(x_4.next()); }
 double UNIF01_NEXT_ADAPTER5() { return CHAOS_DOUBLE_U64(x_5.pull()); }
+
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_testu01_main
+#endif
 
 int main() {
 	unif01_Gen *gen;
@@ -83,3 +89,5 @@ int main() {
 
 	return 0;
 }
+
+#endif
