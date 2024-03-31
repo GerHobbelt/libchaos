@@ -33,6 +33,10 @@ public:
 	inline typename generator::size_next operator()(void) noexcept {
 		return this->next();
 	}
+	friend typename generator::size_next operator<<(typename generator::size_next block, prng &instance) {
+		block = instance.next();
+		return block;
+	}
 };
 
 } //::chaos ////////////////////////////////////////////////////////////////////
