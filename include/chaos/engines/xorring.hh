@@ -11,8 +11,8 @@
 #include "chaos/seed.hh"
 #include "chaos/types.hh"
 
-#include "chaos/generators/xorshift.hh"
 #include "chaos/prng.hh"
+#include "chaos/generators/xorshift.hh"
 
 namespace chaos { //::chaos ////////////////////////////////////////////////////
 namespace engines { //::chaos::engines /////////////////////////////////////////
