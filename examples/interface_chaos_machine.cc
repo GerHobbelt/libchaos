@@ -12,7 +12,7 @@ static int test(uint64_t sollwert, uint64_t check) {
 }
 
 static int test_and_check(uint64_t sollwert, uint64_t check = 0) {
-	auto c = machine.next();
+	auto c = machine.pull();
 	check += c;
 
 	return test(sollwert, check);
