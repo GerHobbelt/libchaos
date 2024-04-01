@@ -53,6 +53,9 @@ public:
 	inline typename engine::size_pull operator()(void) noexcept {
 		return this->pull();
 	}
+	inline typename engine::size_pull next(void) noexcept {
+		return this->pull();
+	}
 };
 
 template <class engine>
