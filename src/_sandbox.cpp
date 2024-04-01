@@ -7,6 +7,7 @@
 #include <vector>
 
 #include <chaos.h>
+#include <chaos/monolithic_examples.h>
 
 #if defined(BUILD_MONOLITHIC)
 #define main chaos_sandbox_main

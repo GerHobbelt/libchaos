@@ -4,6 +4,7 @@
 #include <vector>
 
 #include <chaos.h>
+#include <chaos/monolithic_examples.h>
 
 CHAOS_MACHINE_XORRING64 gen;
 

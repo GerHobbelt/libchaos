@@ -7,6 +7,7 @@
 #include "chaos/analysis.hh"
 #include "chaos/macros.hh"
 #include "chaos/types.hh"
+#include "chaos/monolithic_examples.h"
 
 namespace chaos { //::chaos ////////////////////////////////////////////////////
 

@@ -1,4 +1,6 @@
 #include <chaos.h>
+#include <chaos/monolithic_examples.h>
+
 #include <iostream>
 
 // Chaos Machines

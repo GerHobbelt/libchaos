@@ -1,4 +1,6 @@
 #include <chaos.h> // library header
+#include <chaos/monolithic_examples.h>
+
 #include <iostream>
 
 // initialize chaos machine (64-bit version)

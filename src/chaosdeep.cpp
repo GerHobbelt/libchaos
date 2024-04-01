@@ -4,6 +4,7 @@
 #include <string>
 
 #include <chaos.h>
+#include <chaos/monolithic_examples.h>
 
 using namespace std;
 

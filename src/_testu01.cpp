@@ -1,4 +1,6 @@
 #include <chaos.h>
+#include <chaos/monolithic_examples.h>
+
 #include <iostream>
 #include <random>
 
@@ -32,13 +34,12 @@ double UNIF01_NEXT_ADAPTER5() { return CHAOS_DOUBLE_U64(x_5.pull()); }
 #define main chaos_testu01_main
 #endif
 
-int main() {
+int main(void) {
 	unif01_Gen *gen;
 	gen = unif01_CreateExternGen01(CHAOS_META_NAME(CHAOS_MACHINE_XORRING64),
 	                               UNIF01_NEXT_ADAPTER5);
 
 	//////////////////////////////////////////////////////////////////////////////
-/*
 	std::cout << "=== XORRING ==================================================="
 	          << std::endl;
 	chaos::analysis gen5(UNIF01_NEXT_ADAPTER5);
@@ -63,7 +64,6 @@ int main() {
 	          << std::endl;
 	chaos::analysis gen0(UNIF01_NEXT_ADAPTER0);
 	gen0.raport();
-*/
 	//////////////////////////////////////////////////////////////////////////////
 
 	// smarsa_BirthdaySpacings(gen, NULL, 1, 1000, 0, 10000, 2, 1);

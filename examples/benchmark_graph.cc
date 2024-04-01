@@ -11,6 +11,8 @@
 #include <random>
 #include <string>
 
+#include <chaos/monolithic_examples.h>
+
 typedef std::linear_congruential_engine<std::uint_fast32_t, 48271, 0,
                                         2147483647>
     STL_MINSTD_RAND;
