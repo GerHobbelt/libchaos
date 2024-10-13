@@ -1,4 +1,6 @@
 
+#include "TestU01/suite.h"
+
  #define norm 2.328306549295728e-10
  #define m1   4294967087.0
  #define m2   4294944443.0

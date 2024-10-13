@@ -13,6 +13,9 @@ https://prng.di.unimi.it/
 Modified by Benson Muite in 2022 for use with TestU01
 
 Jump functions removed */
+
+#include "TestU01/suite.h"
+
 #include <stdint.h>
 
 /* This is xoshiro128++ 1.0, one of our 32-bit all-purpose, rock-solid

@@ -28,16 +28,17 @@
  *
 \*************************************************************************/
 
+//#include "util.h"
+//#include "chrono.h"
+//#include "num.h"
+//#include "tables.h"
+//#include "gofw.h"
 
-#include "util.h"
-#include "chrono.h"
-#include "num.h"
-#include "tables.h"
-#include "gofw.h"
+//#include "ftab.h"
+//#include "ffam.h"
+//#include "swrite.h"
 
-#include "ftab.h"
-#include "ffam.h"
-#include "swrite.h"
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 #include <math.h>

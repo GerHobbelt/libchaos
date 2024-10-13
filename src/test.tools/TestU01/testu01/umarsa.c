@@ -28,11 +28,13 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "addstr.h"
+//#include "util.h"
+//#include "addstr.h"
 
-#include "umarsa.h"
-#include "unif01.h"
+//#include "umarsa.h"
+//#include "unif01.h"
+
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 #include <stdlib.h>

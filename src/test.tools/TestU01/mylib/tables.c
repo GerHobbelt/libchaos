@@ -29,10 +29,12 @@
 \*************************************************************************/
 
 
-#include "tables.h"
-#include "util.h"
-#include "mystr.h"
-#include "num.h"
+//#include "tables.h"
+//#include "util.h"
+//#include "mystr.h"
+//#include "num.h"
+
+#include "TestU01/suite.h"
 
 #include <stdlib.h>
 #include <stdio.h>

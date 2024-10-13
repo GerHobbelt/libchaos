@@ -4,10 +4,16 @@
  * then run it using ./speedpcg32.c
  */
 
-#include "unif01.h"
-#include "ulec.h"
+//#include "unif01.h"
+//#include "ulec.h"
 
-uint32_t pcg32_random_r (void);
+#include "TestU01/suite.h"
+
+//uint32_t pcg32_random_r (void);
+
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_testU01_example_speedpcg32_main
+#endif
 
 int main (void)
 {

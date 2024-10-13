@@ -32,9 +32,12 @@
 #include "config.h"
 #endif
 
-#include "gdef.h"
-#ifdef HAVE_WINDOWS_H
-   #include <windows.h>
+//#include "gdef.h"
+
+#include "TestU01/suite.h"
+
+#if defined(HAVE_WINDOWS_H) || defined(_WIN32)
+#include <windows.h>
 #endif
 
 #include <stdlib.h>

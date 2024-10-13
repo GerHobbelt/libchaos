@@ -28,8 +28,11 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "mystr.h"
+//#include "util.h"
+//#include "mystr.h"
+
+#include "TestU01/suite.h"
+
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>

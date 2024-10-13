@@ -1,3 +1,6 @@
+
+#include "TestU01/suite.h"
+
 static unsigned int y = 2463534242U;
 
 unsigned int xorshift (void)

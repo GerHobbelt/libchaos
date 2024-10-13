@@ -28,13 +28,16 @@
  *
 \*************************************************************************/
 
-#include "ugranger.h"
-#include "utaus.h"
-#include "ulcg.h"
-#include "uinv.h"
-#include "ucubic.h"
-#include "unif01.h"
-#include "num.h"
+//#include "ugranger.h"
+//#include "utaus.h"
+//#include "ulcg.h"
+//#include "uinv.h"
+//#include "ucubic.h"
+//#include "unif01.h"
+//#include "num.h"
+
+#include "TestU01/suite.h"
+
 
 #ifdef USE_GMP
 #include <gmp.h>

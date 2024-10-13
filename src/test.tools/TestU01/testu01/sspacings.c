@@ -28,19 +28,21 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "chrono.h"
-#include "num.h"
-#include "tables.h"
+//#include "util.h"
+//#include "chrono.h"
+//#include "num.h"
+//#include "tables.h"
 
-#include "sspacings.h"
-#include "unif01.h"
-#include "wdist.h"
-#include "swrite.h"
+//#include "sspacings.h"
+//#include "unif01.h"
+//#include "wdist.h"
+//#include "swrite.h"
 
-#include "statcoll.h"
-#include "gofw.h"
-#include "fbar.h"
+//#include "statcoll.h"
+//#include "gofw.h"
+//#include "fbar.h"
+
+#include "TestU01/suite.h"
 
 #include <math.h>
 #include <string.h>

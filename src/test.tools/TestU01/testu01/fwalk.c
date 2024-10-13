@@ -28,16 +28,18 @@
  *
 \*************************************************************************/
 
-#include "gdef.h"
-#include "util.h"
-#include "gofs.h"
+//#include "gdef.h"
+//#include "util.h"
+//#include "gofs.h"
 
-#include "fwalk.h"
-#include "ffam.h"
-#include "fres.h"
-#include "fcho.h"
-#include "ftab.h"
-#include "swalk.h"
+//#include "fwalk.h"
+//#include "ffam.h"
+//#include "fres.h"
+//#include "fcho.h"
+//#include "ftab.h"
+//#include "swalk.h"
+
+#include "TestU01/suite.h"
 
 #include <string.h>
 

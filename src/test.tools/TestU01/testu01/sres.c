@@ -28,9 +28,11 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "sres.h"
-#include "fbar.h"
+//#include "util.h"
+//#include "sres.h"
+//#include "fbar.h"
+
+#include "TestU01/suite.h"
 
 #include <string.h>
 #include <math.h>

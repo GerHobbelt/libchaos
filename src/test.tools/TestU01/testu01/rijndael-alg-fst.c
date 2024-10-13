@@ -33,7 +33,10 @@
 #include <assert.h>
 #include <stdlib.h>
 
-#include "rijndael-alg-fst.h"
+//#include "rijndael-alg-fst.h"
+
+#include "TestU01/suite.h"
+
 
 /*
 Te0[x] = S [x].[02, 01, 01, 03];

@@ -1,4 +1,7 @@
-#include "stdint.h"
+
+#include "TestU01/suite.h"
+
+#include <stdint.h>
 
 // This random number generation algorithm is taken from
 // M.E. O'Neil  "PCG: A Family of Simple Fast Space-Efficient"

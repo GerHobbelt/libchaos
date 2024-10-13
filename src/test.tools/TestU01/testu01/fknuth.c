@@ -28,17 +28,19 @@
  *
 \*************************************************************************/
 
-#include "gdef.h"
-#include "util.h"
-#include "gofs.h"
-#include "gofw.h"
+//#include "gdef.h"
+//#include "util.h"
+//#include "gofs.h"
+//#include "gofw.h"
 
-#include "fknuth.h"
-#include "ffam.h"
-#include "fres.h"
-#include "fcho.h"
-#include "ftab.h"
-#include "sknuth.h"
+//#include "fknuth.h"
+//#include "ffam.h"
+//#include "fres.h"
+//#include "fcho.h"
+//#include "ftab.h"
+//#include "sknuth.h"
+
+#include "TestU01/suite.h"
 
 #include <string.h>
 #include <stdio.h>

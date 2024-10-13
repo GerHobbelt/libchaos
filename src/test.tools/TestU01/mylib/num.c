@@ -28,10 +28,12 @@
  *
 \*************************************************************************/
 
+//#include "util.h"
+//#include "bitset.h"
+//#include "num.h"
 
-#include "util.h"
-#include "bitset.h"
-#include "num.h"
+#include "TestU01/suite.h"
+
 #include <math.h>
 #include <string.h>
 #include <stdio.h>

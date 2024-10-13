@@ -28,14 +28,16 @@
  *
 \*************************************************************************/
 
-#include "gdef.h"
-#include "num.h"
-#include "util.h"
+//#include "gdef.h"
+//#include "num.h"
+//#include "util.h"
 
-#include "ffsr.h"
-#include "ffam.h"
-#include "utaus.h"
-#include "ulec.h"
+//#include "ffsr.h"
+//#include "ffam.h"
+//#include "utaus.h"
+//#include "ulec.h"
+
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 

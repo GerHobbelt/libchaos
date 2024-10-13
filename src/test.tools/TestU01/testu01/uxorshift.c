@@ -28,10 +28,12 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "addstr.h"
-#include "uxorshift.h"
-#include "unif01.h"
+//#include "util.h"
+//#include "addstr.h"
+//#include "uxorshift.h"
+//#include "unif01.h"
+
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 #include <string.h>

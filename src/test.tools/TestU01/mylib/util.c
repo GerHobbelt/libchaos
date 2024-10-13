@@ -30,7 +30,9 @@
 
 #define _FILE_OFFSET_BITS 64
 
-#include "util.h"
+//#include "util.h"
+
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 #include <stdlib.h>

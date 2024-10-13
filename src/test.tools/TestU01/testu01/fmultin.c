@@ -28,16 +28,18 @@
  *
 \*************************************************************************/
 
-#include "gdef.h"
-#include "num.h"
-#include "util.h"
+//#include "gdef.h"
+//#include "num.h"
+//#include "util.h"
 
-#include "fmultin.h"
-#include "ffam.h"
-#include "fres.h"
-#include "fcho.h"
-#include "ftab.h"
-#include "smultin.h"
+//#include "fmultin.h"
+//#include "ffam.h"
+//#include "fres.h"
+//#include "fcho.h"
+//#include "ftab.h"
+//#include "smultin.h"
+
+#include "TestU01/suite.h"
 
 #include <string.h>
 #include <stdio.h>

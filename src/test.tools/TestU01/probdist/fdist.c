@@ -28,14 +28,16 @@
  *
 \*************************************************************************/
 
-#include "fdist.h"
-#include "fmass.h"
-#include "fbar.h"
+//#include "fdist.h"
+//#include "fmass.h"
+//#include "fbar.h"
 
-#include "num.h"
-#include "num2.h"
-#include "util.h"
-#include "tables.h"
+//#include "num.h"
+//#include "num2.h"
+//#include "util.h"
+//#include "tables.h"
+
+#include "TestU01/suite.h"
 
 #include <stddef.h>
 #include <limits.h>

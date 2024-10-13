@@ -1,9 +1,15 @@
 
-#include "unif01.h"
-#include "ulcg.h"
-#include "sres.h"
-#include "swrite.h"
-#include "smarsa.h"
+//#include "unif01.h"
+//#include "ulcg.h"
+//#include "sres.h"
+//#include "swrite.h"
+//#include "smarsa.h"
+
+#include "TestU01/suite.h"
+
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_testU01_example_birth2_main
+#endif
 
 int main (void)
 {

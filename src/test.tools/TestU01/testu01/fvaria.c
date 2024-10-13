@@ -28,18 +28,20 @@
  *
 \*************************************************************************/
 
+//#include "util.h"
+//#include "gofs.h"
+//#include "num.h"
 
-#include "util.h"
-#include "gofs.h"
-#include "num.h"
+//#include "fvaria.h"
+//#include "ffam.h"
+//#include "fres.h"
+//#include "fcho.h"
 
-#include "fvaria.h"
-#include "ffam.h"
-#include "fres.h"
-#include "fcho.h"
+//#include "svaria.h"
+//#include "sres.h"
 
-#include "svaria.h"
-#include "sres.h"
+#include "TestU01/suite.h"
+
 
 
 

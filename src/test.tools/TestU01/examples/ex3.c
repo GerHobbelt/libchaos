@@ -1,9 +1,15 @@
 
-#include "unif01.h"
-#include "ulcg.h"
-#include "ulec.h"
-#include "my16807.h"
-#include <stdio.h>
+//#include "unif01.h"
+//#include "ulcg.h"
+//#include "ulec.h"
+//#include "my16807.h"
+//#include <stdio.h>
+
+#include "TestU01/suite.h"
+
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_testU01_example_ex3_main
+#endif
 
 int main (void) 
 {

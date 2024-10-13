@@ -28,10 +28,12 @@
  *
 \*************************************************************************/
 
-#include "gdef.h"
-#include "util.h"
-#include "ufile.h"
-#include "unif01.h"
+//#include "gdef.h"
+//#include "util.h"
+//#include "ufile.h"
+//#include "unif01.h"
+
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 #include <string.h>

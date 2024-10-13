@@ -79,7 +79,11 @@ A million repetitions of "a"
 
 
 /*=========================================================================*/
-#include "tu01_sha1.h"
+
+//#include "tu01_sha1.h"
+
+#include "TestU01/suite.h"
+
 #include <string.h>
 
 #undef SHA1HANDSOFF   /* Copies data before messing with it */

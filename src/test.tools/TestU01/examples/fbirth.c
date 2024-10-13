@@ -1,7 +1,13 @@
-#include "fcong.h"
-#include "ffam.h"
-#include "fcho.h"
-#include "fmarsa.h"
+//#include "fcong.h"
+//#include "ffam.h"
+//#include "fcho.h"
+//#include "fmarsa.h"
+
+#include "TestU01/suite.h"
+
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_testU01_example_fbirth_main
+#endif
 
 int main (void)
 {

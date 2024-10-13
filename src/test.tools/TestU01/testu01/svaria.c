@@ -28,23 +28,25 @@
  *
 \*************************************************************************/
 
-#include "gdef.h"
-#include "util.h"
-#include "tables.h"
-#include "chrono.h"
-#include "num.h"
-#include "num2.h"
+//#include "gdef.h"
+//#include "util.h"
+//#include "tables.h"
+//#include "chrono.h"
+//#include "num.h"
+//#include "num2.h"
 
-#include "svaria.h"
-#include "unif01.h"
-#include "sres.h"
-#include "wdist.h"
-#include "swrite.h"
-#include "smultin.h"
+//#include "svaria.h"
+//#include "unif01.h"
+//#include "sres.h"
+//#include "wdist.h"
+//#include "swrite.h"
+//#include "smultin.h"
 
-#include "fmass.h"
-#include "gofs.h"
-#include "gofw.h"
+//#include "fmass.h"
+//#include "gofs.h"
+//#include "gofw.h"
+
+#include "TestU01/suite.h"
 
 #include <math.h>
 #include <float.h>
@@ -645,7 +647,7 @@ static int svaria_CollisionArgMax_00 (unif01_Gen *gen, sres_Chi2 *res,
    double V[1];
    fmass_INFO Q;
    lebool localRes = FALSE;
-   chrono_Chrono *chro, *Timer;
+   chrono_Chrono *chro = NULL, *Timer;
    char *TestName = "svaria_CollisionArgMax test";
    char chaine[LEN1 + 1] = "";
    char str[LEN2 + 1];

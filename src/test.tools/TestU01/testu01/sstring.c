@@ -28,22 +28,24 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "chrono.h"
-#include "num.h"
-#include "tables.h"
-#include "bitset.h"
+//#include "util.h"
+//#include "chrono.h"
+//#include "num.h"
+//#include "tables.h"
+//#include "bitset.h"
 
-#include "sstring.h"
-#include "unif01.h"
-#include "wdist.h"
-#include "swrite.h"
-#include "sres.h"
+//#include "sstring.h"
+//#include "unif01.h"
+//#include "wdist.h"
+//#include "swrite.h"
+//#include "sres.h"
 
-#include "gofs.h"
-#include "gofw.h"
-#include "fbar.h"
-#include "statcoll.h"
+//#include "gofs.h"
+//#include "gofw.h"
+//#include "fbar.h"
+//#include "statcoll.h"
+
+#include "TestU01/suite.h"
 
 #include <math.h>
 #include <float.h>

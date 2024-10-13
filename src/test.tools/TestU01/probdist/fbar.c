@@ -28,13 +28,15 @@
  *
 \*************************************************************************/
 
-#include "fbar.h"
-#include "fdist.h"
+//#include "fbar.h"
+//#include "fdist.h"
 
-#include "num.h"
-#include "num2.h"
-#include "util.h"
-#include "gdef.h"
+//#include "num.h"
+//#include "num2.h"
+//#include "util.h"
+//#include "gdef.h"
+
+#include "TestU01/suite.h"
 
 #include <math.h>
 #include <float.h>

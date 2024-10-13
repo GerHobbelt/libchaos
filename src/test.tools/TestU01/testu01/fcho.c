@@ -28,10 +28,12 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "fcho.h"
-#include "ftab.h"
-#include "swrite.h"
+//#include "util.h"
+//#include "fcho.h"
+//#include "ftab.h"
+//#include "swrite.h"
+
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -40,7 +42,6 @@
 
 
 #define EPS2 1.0E-10
-#define LEN 7
 
 
 

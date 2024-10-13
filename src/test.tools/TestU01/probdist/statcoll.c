@@ -28,10 +28,12 @@
  *
 \*************************************************************************/
 
-#include "statcoll.h"
+//#include "statcoll.h"
 
-#include "util.h"
-#include "tables.h"
+//#include "util.h"
+//#include "tables.h"
+
+#include "TestU01/suite.h"
 
 #include <stddef.h>
 #include <string.h>

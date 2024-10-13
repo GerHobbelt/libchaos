@@ -28,13 +28,15 @@
  *
 \*************************************************************************/
 
-#include "gdef.h"
-#include "util.h"
-#include "num.h"
-#include "addstr.h"
+//#include "gdef.h"
+//#include "util.h"
+//#include "num.h"
+//#include "addstr.h"
 
-#include "umrg.h"
-#include "unif01.h"
+//#include "umrg.h"
+//#include "unif01.h"
+
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 #include <stdlib.h>

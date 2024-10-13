@@ -28,6 +28,7 @@
  *
 \*************************************************************************/
 
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -173,7 +174,13 @@ static int ProcessLine (char *line)
 
 /**************************************************************************/
 
-int main (int argc, char *argv[])
+#include <chaos/monolithic_examples.h>
+
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_testU01_tcode_tool_main
+#endif
+
+int main (int argc, const char **argv)
 {
    char *p, *q;
    int isCode = 0;         /* If isCode == TRUE, we are in a region of

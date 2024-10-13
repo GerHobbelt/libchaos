@@ -1,7 +1,10 @@
-#include "my16807.h"
-#include "unif01.h"
-#include "util.h"
-#include "addstr.h"
+//#include "my16807.h"
+//#include "unif01.h"
+//#include "util.h"
+//#include "addstr.h"
+
+#include "TestU01/suite.h"
+
 #include <string.h>
 
 typedef struct { double S; } My16807_state;

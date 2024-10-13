@@ -7,10 +7,16 @@
  * bbattery_Crush and bbattery_BigCrush
  */
 
-#include "unif01.h"
-#include "bbattery.h"
+//#include "unif01.h"
+//#include "bbattery.h"
 
-uint32_t xoshiro128plusplus (void);
+#include "TestU01/suite.h"
+
+//uint32_t xoshiro128plusplus (void);
+
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_testU01_example_testxoshiro128plusplus_main
+#endif
 
 int main (void)
 {

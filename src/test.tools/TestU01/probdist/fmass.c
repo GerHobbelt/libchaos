@@ -28,12 +28,13 @@
  *
 \*************************************************************************/
 
+//#include "fmass.h"
 
-#include "fmass.h"
+//#include "util.h"
+//#include "num.h"
+//#include "num2.h"
 
-#include "util.h"
-#include "num.h"
-#include "num2.h"
+#include "TestU01/suite.h"
 
 #include <stddef.h>
 #include <float.h>

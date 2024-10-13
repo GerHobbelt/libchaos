@@ -1,6 +1,12 @@
-#include "unif01.h"
-#include "ufile.h"
-#include "scatter.h"
+//#include "unif01.h"
+//#include "ufile.h"
+//#include "scatter.h"
+
+#include "TestU01/suite.h"
+
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_testU01_example_scat_main
+#endif
 
 int main (void) 
 {

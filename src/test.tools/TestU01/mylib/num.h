@@ -4,7 +4,13 @@
 #ifndef NUM_H
 #define NUM_H
  
-#include "gdef.h"
+//#include "gdef.h"
+
+#include "TestU01/types.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif  /* __cplusplus */
 
 
 #define num_Pi     3.14159265358979323846
@@ -86,7 +92,10 @@ long num_InvEuclid (long m, long z);
 
 unsigned long num_InvExpon (int E, unsigned long z);
 
- 
+
+#ifdef __cplusplus
+}
+#endif  /* __cplusplus */
+
 #endif
- 
 

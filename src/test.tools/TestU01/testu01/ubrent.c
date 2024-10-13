@@ -15,10 +15,11 @@
  *
 \*************************************************************************/
 
+//#include "util.h"
+//#include "addstr.h"
+//#include "ubrent.h"
 
-#include "util.h"
-#include "addstr.h"
-#include "ubrent.h"
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 #include <string.h>

@@ -3,13 +3,15 @@
 
 #include <iostream>
 
-#if 0
+#if 01
+
+#include "TestU01/suite.h"
 
 //extern "C" {
-#include "bbattery.h"
-#include "smarsa.h"
-#include "unif01.h"
-#include "util.h"
+//#include "bbattery.h"
+//#include "smarsa.h"
+//#include "unif01.h"
+//#include "util.h"
 //}
 
 // Chaos Machines

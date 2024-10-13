@@ -28,23 +28,24 @@
  *
 \*************************************************************************/
 
+//#include "util.h"
+//#include "tables.h"
+//#include "chrono.h"
+//#include "num.h"
+//#include "num2.h"
 
-#include "util.h"
-#include "tables.h"
-#include "chrono.h"
-#include "num.h"
-#include "num2.h"
+//#include "snpair.h"
+//#include "swrite.h"
+//#include "unif01.h"
 
-#include "snpair.h"
-#include "swrite.h"
-#include "unif01.h"
+//#include "statcoll.h"
+//#include "fdist.h"
+//#include "fbar.h"
+//#include "fmass.h"
+//#include "gofs.h"
+//#include "gofw.h"
 
-#include "statcoll.h"
-#include "fdist.h"
-#include "fbar.h"
-#include "fmass.h"
-#include "gofs.h"
-#include "gofw.h"
+#include "TestU01/suite.h"
 
 #include <math.h>
 #include <limits.h>
@@ -2298,7 +2299,7 @@ void snpair_BickelBreiman (unif01_Gen * gen, snpair_Res * res,
    double x, nLR, kLR;
    WorkType *work;
    lebool localRes = FALSE;
-   chrono_Chrono *Timer, *Time1;
+   chrono_Chrono *Timer, *Time1 = NULL;
    char *TestName = "snpair_BickelBreiman test";
 
    Timer = chrono_Create ();

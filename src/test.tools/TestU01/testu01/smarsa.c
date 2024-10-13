@@ -28,26 +28,28 @@
  *
 \*************************************************************************/
 
-#include "gdef.h"
-#include "util.h"
-#include "tables.h"
-#include "chrono.h"
-#include "num.h"
+//#include "gdef.h"
+//#include "util.h"
+//#include "tables.h"
+//#include "chrono.h"
+//#include "num.h"
 
-#include "smarsa.h"
-#include "smultin.h"
-#include "wdist.h"
-#include "swrite.h"
-#include "unif01.h"
+//#include "smarsa.h"
+//#include "smultin.h"
+//#include "wdist.h"
+//#include "swrite.h"
+//#include "unif01.h"
 
-#include "vectorsF2.h"
+//#include "vectorsF2.h"
 
-#include "gofs.h"
-#include "gofw.h"
-#include "fdist.h"
-#include "fbar.h"
-#include "fmass.h"
-#include "statcoll.h"
+//#include "gofs.h"
+//#include "gofw.h"
+//#include "fdist.h"
+//#include "fbar.h"
+//#include "fmass.h"
+//#include "statcoll.h"
+
+#include "TestU01/suite.h"
 
 #include <math.h>
 #include <stdio.h>

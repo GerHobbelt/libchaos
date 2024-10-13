@@ -1,7 +1,13 @@
 
-#include "unif01.h"
-#include "utaus.h"
-#include <stdio.h>
+//#include "unif01.h"
+//#include "utaus.h"
+//#include <stdio.h>
+
+#include "TestU01/suite.h"
+
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_testU01_example_ex4_main
+#endif
 
 int main (void)
 {

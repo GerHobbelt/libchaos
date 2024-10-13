@@ -28,14 +28,16 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "tables.h"
-#include "num.h"
-#include "num2.h"
+//#include "util.h"
+//#include "tables.h"
+//#include "num.h"
+//#include "num2.h"
 
-#include "gofs.h"
-#include "fdist.h"
-#include "wdist.h"
+//#include "gofs.h"
+//#include "fdist.h"
+//#include "wdist.h"
+
+#include "TestU01/suite.h"
 
 #include <float.h>
 #include <math.h>

@@ -28,8 +28,10 @@
  *
 \*************************************************************************/
 
-#include "wdist.h"
-#include "fdist.h"
+//#include "wdist.h"
+//#include "fdist.h"
+
+#include "TestU01/suite.h"
 
 
 

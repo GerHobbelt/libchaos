@@ -28,12 +28,14 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "chrono.h"
-#include "mystr.h"
+//#include "util.h"
+//#include "chrono.h"
+//#include "mystr.h"
 
-#include "scatter.h"
-#include "unif01.h"
+//#include "scatter.h"
+//#include "unif01.h"
+
+#include "TestU01/suite.h"
 
 #include <string.h>
 #include <stdio.h>

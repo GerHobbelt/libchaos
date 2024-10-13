@@ -32,16 +32,18 @@
 #include "config.h"
 #endif
 
-#include "chrono.h"
-#include "gdef.h"
-#include "util.h"
-#include "num.h"
+//#include "chrono.h"
+//#include "gdef.h"
+//#include "util.h"
+//#include "num.h"
+
+#include "TestU01/suite.h"
 
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-#ifdef HAVE_WINDOWS_H
+#if defined(HAVE_WINDOWS_H) || defined(_WIN32)
 
 #include <windows.h>
 

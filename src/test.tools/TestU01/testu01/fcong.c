@@ -28,17 +28,19 @@
  *
 \*************************************************************************/
 
-#include "gdef.h"
-#include "util.h"
-#include "num.h"
+//#include "gdef.h"
+//#include "util.h"
+//#include "num.h"
 
-#include "fcong.h"
-#include "ffam.h"
-#include "unif01.h"
-#include "ulcg.h"
-#include "uinv.h"
-#include "ucubic.h"
-#include "umrg.h"
+//#include "fcong.h"
+//#include "ffam.h"
+//#include "unif01.h"
+//#include "ulcg.h"
+//#include "uinv.h"
+//#include "ucubic.h"
+//#include "umrg.h"
+
+#include "TestU01/suite.h"
 
 #include <string.h>
 

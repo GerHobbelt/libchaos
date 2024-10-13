@@ -4,14 +4,17 @@
 #include <iostream>
 #include <random>
 
-#if 0
+#if 01
 
 //extern "C" {
-#include "bbattery.h"
-#include "smarsa.h"
-#include "unif01.h"
-#include "util.h"
+//#include "bbattery.h"
+//#include "smarsa.h"
+//#include "unif01.h"
+//#include "util.h"
 //}
+
+#include "TestU01/suite.h"
+
 
 CHAOS_MACHINE_NCG x_0;
 CHAOS_MACHINE_XORRING64 x_5;

@@ -1,6 +1,12 @@
 
-#include "unif01.h"
-#include "bbattery.h"
+//#include "unif01.h"
+//#include "bbattery.h"
+
+#include "TestU01/suite.h"
+
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_testU01_example_ex7_main
+#endif
 
 unsigned int xorshift (void);
 double MRG32k3a (void);

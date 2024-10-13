@@ -1,11 +1,16 @@
-
- 
 /*  uxorshift.h  for ANSI C */
-#ifndef UXORSHIFT_H
-#define UXORSHIFT_H
+
+#ifndef TESTU01_UXORSHIFT_H
+#define TESTU01_UXORSHIFT_H
  
-#include "gdef.h"
-#include "unif01.h"
+//#include "gdef.h"
+//#include "unif01.h"
+
+#include "TestU01/types.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif  /* __cplusplus */
 
 
 unif01_Gen* uxorshift_CreateXorshift32 (int a, int b, int c, unsigned int x);
@@ -18,8 +23,7 @@ unif01_Gen* uxorshift_CreateXorshift32 (int a, int b, int c, unsigned int x);
 
 
 
-unif01_Gen * uxorshift_CreateXorshiftC (int a, int b, int c, int r,
-                                        unsigned int X[]);
+unif01_Gen * uxorshift_CreateXorshiftC (int a, int b, int c, int r,                                        unsigned int X[]);
 
 
 
@@ -44,6 +48,10 @@ void uxorshift_DeleteXorshiftD (unif01_Gen * gen);
 
 void uxorshift_DeleteGen (unif01_Gen * gen);
  
+
+#ifdef __cplusplus
+}
+#endif  /* __cplusplus */
+
 #endif
- 
 

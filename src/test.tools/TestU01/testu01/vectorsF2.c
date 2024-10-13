@@ -1,4 +1,7 @@
-#include "vectorsF2.h"
+//#include "vectorsF2.h"
+
+#include "TestU01/suite.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 

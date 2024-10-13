@@ -28,18 +28,19 @@
  *
 \*************************************************************************/
 
+//#include "util.h"
+//#include "gofs.h"
+//#include "num.h"
 
-#include "util.h"
-#include "gofs.h"
-#include "num.h"
+//#include "fmarsa.h"
+//#include "fcho.h"
+//#include "ffam.h"
+//#include "fres.h"
+//#include "ftab.h"
+//#include "smarsa.h"
+//#include "unif01.h"
 
-#include "fmarsa.h"
-#include "fcho.h"
-#include "ffam.h"
-#include "fres.h"
-#include "ftab.h"
-#include "smarsa.h"
-#include "unif01.h"
+#include "TestU01/suite.h"
 
 #include <string.h>
 #include <limits.h>

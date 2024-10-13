@@ -1,8 +1,14 @@
-#include "fcong.h"
-#include "ffam.h"
-#include "fcho.h"
-#include "fmultin.h"
-#include "smultin.h"
+//#include "fcong.h"
+//#include "ffam.h"
+//#include "fcho.h"
+//#include "fmultin.h"
+//#include "smultin.h"
+
+#include "TestU01/suite.h"
+
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_testU01_example_fcoll_main
+#endif
 
 int main (void)
 {

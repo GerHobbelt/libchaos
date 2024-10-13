@@ -6,11 +6,13 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "addstr.h"
+//#include "util.h"
+//#include "addstr.h"
 
-#include "ucrypto.h"
-#include "unif01.h"
+//#include "ucrypto.h"
+//#include "unif01.h"
+
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -143,9 +145,9 @@ typedef  struct randctx  randctx;
  If (flag==TRUE), then use the contents of randrsl[0..RANDSIZ-1] as the seed.
 ------------------------------------------------------------------------------
 */
-static void randinit(/*_ randctx *r, word flag _*/);
+static void randinit(randctx *r, word flag);
 
-static void isaac(/*_ randctx *r _*/);
+static void isaac(randctx *r);
 
 
 /*
@@ -196,8 +198,7 @@ MODIFIED:
   *(r++) = b = ind(mm,y>>RANDSIZL) + x; \
 }
 
-static void     isaac(ctx)
-randctx *ctx;
+static void     isaac(randctx *ctx)
 {
    register ub4 a,b,x,y,*m,*mm,*m2,*r,*mend;
    mm=ctx->randmem; r=ctx->randrsl;
@@ -233,9 +234,7 @@ randctx *ctx;
 }
 
 /* if (flag==TRUE), then use the contents of randrsl[] to initialize mm[]. */
-static void randinit(ctx, flag)
-randctx *ctx;
-word     flag;
+static void randinit(randctx *ctx, word     flag)
 {
    word i;
    ub4 a,b,c,d,e,f,g,h;

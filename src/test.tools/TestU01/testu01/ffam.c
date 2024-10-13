@@ -29,10 +29,12 @@
 \*************************************************************************/
 
 
-#include "gdef.h"
-#include "util.h"
-#include "ffam.h"
-#include "unif01.h"
+//#include "gdef.h"
+//#include "util.h"
+//#include "ffam.h"
+//#include "unif01.h"
+
+#include "TestU01/suite.h"
 
 #include <string.h>
 

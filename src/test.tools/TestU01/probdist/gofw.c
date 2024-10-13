@@ -28,18 +28,19 @@
  *
 \*************************************************************************/
 
+//#include "gofw.h"
+//#include "gofs.h"
+//#include "fdist.h"
+//#include "wdist.h"
+//#include "fbar.h"
 
-#include "gofw.h"
-#include "gofs.h"
-#include "fdist.h"
-#include "wdist.h"
-#include "fbar.h"
+//#include "util.h"
+//#include "num.h"
+//#include "tables.h"
+//#include "mystr.h"
+//#include "bitset.h"
 
-#include "util.h"
-#include "num.h"
-#include "tables.h"
-#include "mystr.h"
-#include "bitset.h"
+#include "TestU01/suite.h"
 
 #include <float.h>
 #include <string.h>

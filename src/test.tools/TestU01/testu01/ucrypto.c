@@ -28,14 +28,16 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "addstr.h"
-#include "num.h"
+//#include "util.h"
+//#include "addstr.h"
+//#include "num.h"
 
-#include "rijndael-alg-fst.h"
-#include "tu01_sha1.h"
-#include "ucrypto.h"
-#include "unif01.h"
+//#include "rijndael-alg-fst.h"
+//#include "tu01_sha1.h"
+//#include "ucrypto.h"
+//#include "unif01.h"
+
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 #include <string.h>

@@ -29,8 +29,11 @@
 \*************************************************************************/
 
 
-#include "bitset.h"
-#include "util.h"
+//#include "bitset.h"
+//#include "util.h"
+
+#include "TestU01/suite.h"
+
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>

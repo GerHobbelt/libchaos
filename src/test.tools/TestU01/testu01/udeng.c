@@ -7,13 +7,15 @@
  *
 \*************************************************************************/
 
-#include "gdef.h"
-#include "util.h"
-#include "addstr.h"
-#include "num.h"
+//#include "gdef.h"
+//#include "util.h"
+//#include "addstr.h"
+//#include "num.h"
 
-#include "udeng.h"
-#include "unif01.h"
+//#include "udeng.h"
+//#include "unif01.h"
+
+#include "TestU01/suite.h"
 
 #include <stdlib.h>
 #include <stdio.h>

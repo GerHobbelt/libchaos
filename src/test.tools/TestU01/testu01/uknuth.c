@@ -7,11 +7,13 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "addstr.h"
+//#include "util.h"
+//#include "addstr.h"
 
-#include "uknuth.h"
-#include "unif01.h"
+//#include "uknuth.h"
+//#include "unif01.h"
+
+#include "TestU01/suite.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -56,12 +58,12 @@ both versions in our file. (R. Simard)
 #define MM (1L<<30)                 /* the modulus */
 #define mod_diff(x,y) (((x)-(y))&(MM-1)) /* subtraction mod MM */
 
-long ran_x1[KK];                    /* the generator state */
+static long ran_x1[KK];                    /* the generator state */
 
 /* void ran_array(long aa[],int n) */
-void ran_array1(aa,n)    /* put n new random numbers in aa */
-  long *aa;   /* destination */
-  int n;      /* array length (must be at least KK) */
+void ran_array1(    /* put n new random numbers in aa */
+  long *aa,   /* destination */
+  int n)      /* array length (must be at least KK) */
 {
   register int i,j;
   for (j=0;j<KK;j++) aa[j]=ran_x1[j];
@@ -75,8 +77,8 @@ void ran_array1(aa,n)    /* put n new random numbers in aa */
 #define evenize(x) ((x)&(MM-2))   /* make x even */
 
 /* void ran_start(long seed) */
-void ran_start1(seed)    /* do this before using ran_array1 */
-  long seed;            /* selector for different streams */
+void ran_start1(    /* do this before using ran_array1 */
+  long seed)            /* selector for different streams */
 {
   register int t,j;
   long x[KK+KK-1];              /* the preparation buffer */
@@ -110,12 +112,12 @@ void ran_start1(seed)    /* do this before using ran_array1 */
 /* after calling ran_start1, get new randoms by, e.g., "x=ran_arr_next()" */
 
 #define QUALITY 1009 /* recommended quality level for high-res use */
-long ran_arr_buf1[QUALITY];
-long ran_arr_sentinel1=-1;
-long *ran_arr_ptr1=&ran_arr_sentinel1; /* the next random number, or -1 */
+static long ran_arr_buf1[QUALITY];
+static long ran_arr_sentinel1=-1;
+static long *ran_arr_ptr1=&ran_arr_sentinel1; /* the next random number, or -1 */
 
 #define ran_arr_next1() (*ran_arr_ptr1>=0? *ran_arr_ptr1++: ran_arr_cycle1())
-long ran_arr_cycle1()
+long ran_arr_cycle1(void)
 {
   ran_array1(ran_arr_buf1,QUALITY);
   ran_arr_buf1[100]=-1;
@@ -240,9 +242,9 @@ include both versions in our file. (R. Simard)
 double ran_u1[KK];           /* the generator state */
 
 /* void ranf_array1(double aa[], int n) */
-void ranf_array1(aa,n)    /* put n new random fractions in aa */
-  double *aa;   /* destination */
-  int n;      /* array length (must be at least KK) */
+void ranf_array1(    /* put n new random fractions in aa */
+  double *aa,   /* destination */
+  int n)      /* array length (must be at least KK) */
 {
   register int i,j;
   for (j=0;j<KK;j++) aa[j]=ran_u1[j];
@@ -255,8 +257,8 @@ void ranf_array1(aa,n)    /* put n new random fractions in aa */
 #define is_odd(s) ((s)&1)
 
 /* void ranf_start1(long seed) */
-void ranf_start1(seed)    /* do this before using ranf_array1 */
-  long seed;            /* selector for different streams */
+void ranf_start1(    /* do this before using ranf_array1 */
+  long seed)            /* selector for different streams */
 {
   register int t,s,j;
   double u[KK+KK-1],ul[KK+KK-1];
@@ -299,7 +301,7 @@ double ranf_arr_sentinel1=-1.0;
 double *ranf_arr_ptr1=&ranf_arr_sentinel1; /* the next random fraction, or -1 */
 
 #define ranf_arr_next1() (*ranf_arr_ptr1>=0? *ranf_arr_ptr1++: ranf_arr_cycle1())
-double ranf_arr_cycle1()
+double ranf_arr_cycle1(void)
 {
   ranf_array1(ranf_arr_buf1,QUALITY);
   ranf_arr_buf1[100]=-1;
@@ -425,13 +427,9 @@ unif01_Gen * uknuth_CreateRanf_array1 (long s, double B[])
 
 long ran_x[KK];                    /* the generator state */
 
-#ifdef __STDC__
-void ran_array(long aa[],int n)
-#else
-void ran_array(aa,n)    /* put n new random numbers in aa */
-  long *aa;   /* destination */
-  int n;      /* array length (must be at least KK) */
-#endif
+void ran_array(    /* put n new random numbers in aa */
+  long *aa,   /* destination */
+  int n)      /* array length (must be at least KK) */
 {
   register int i,j;
   for (j=0;j<KK;j++) aa[j]=ran_x[j];
@@ -449,7 +447,7 @@ long ran_arr_sentinel=-1;
 long *ran_arr_ptr=&ran_arr_sentinel; /* the next random number, or -1 */
 
 #define ran_arr_next() (*ran_arr_ptr>=0? *ran_arr_ptr++: ran_arr_cycle())
-long ran_arr_cycle()
+long ran_arr_cycle(void)
 {
   ran_array(ran_arr_buf,QUALITY);
   ran_arr_buf[100]=-1;
@@ -460,12 +458,8 @@ long ran_arr_cycle()
 #define TT  70   /* guaranteed separation between streams */
 #define is_odd(x)  ((x)&1)          /* units bit of x */
 
-#ifdef __STDC__
-void ran_start(long seed)
-#else
-void ran_start(seed)    /* do this before using ran_array */
-  long seed;            /* selector for different streams */
-#endif
+void ran_start(    /* do this before using ran_array */
+  long seed)            /* selector for different streams */
 {
   register int t,j;
   long x[KK+KK-1];              /* the preparation buffer */
@@ -608,13 +602,9 @@ unif01_Gen *uknuth_CreateRan_array2 (long s, long A[])
 
 double ran_u[KK];           /* the generator state */
 
-#ifdef __STDC__
-void ranf_array(double aa[], int n)
-#else
-void ranf_array(aa,n)    /* put n new random fractions in aa */
-  double *aa;   /* destination */
-  int n;      /* array length (must be at least KK) */
-#endif
+void ranf_array(    /* put n new random fractions in aa */
+  double *aa,   /* destination */
+  int n)      /* array length (must be at least KK) */
 {
   register int i,j;
   for (j=0;j<KK;j++) aa[j]=ran_u[j];
@@ -632,7 +622,7 @@ double ranf_arr_sentinel=-1.0;
 double *ranf_arr_ptr=&ranf_arr_sentinel; /* the next random fraction, or -1 */
 
 #define ranf_arr_next() (*ranf_arr_ptr>=0? *ranf_arr_ptr++: ranf_arr_cycle())
-double ranf_arr_cycle()
+double ranf_arr_cycle(void)
 {
   ranf_array(ranf_arr_buf,QUALITY);
   ranf_arr_buf[100]=-1;
@@ -643,12 +633,8 @@ double ranf_arr_cycle()
 #define TT  70   /* guaranteed separation between streams */
 #define is_odd(s) ((s)&1)
 
-#ifdef __STDC__
-void ranf_start(long seed)
-#else
-void ranf_start(seed)    /* do this before using ranf_array */
-  long seed;            /* selector for different streams */
-#endif
+void ranf_start(    /* do this before using ranf_array */
+  long seed)            /* selector for different streams */
 {
   register int t,s,j;
   double u[KK+KK-1];

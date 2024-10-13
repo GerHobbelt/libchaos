@@ -1,11 +1,19 @@
-#include "unif01.h"
-#include "usoft.h"
-#include "scatter.h"
+//#include "unif01.h"
+//#include "usoft.h"
+//#include "scatter.h"
 
-int Proj[] = { 1, 3 };
-long LacI[] = { 1, 2, 6};
-double Lower[] = { 0.0, 0.0, 0.0 };
-double Upper[] = { 0.0001, 0.5, 1.0 };
+#include "TestU01/suite.h"
+
+static int Proj[] = { 1, 3 };
+static long LacI[] = { 1, 2, 6};
+static double Lower[] = { 0.0, 0.0, 0.0 };
+static double Upper[] = { 0.0001, 0.5, 1.0 };
+
+#include <chaos/monolithic_examples.h>
+
+#if defined(BUILD_MONOLITHIC)
+#define main chaos_testU01_example_scat2_main
+#endif
 
 int main (void)
 {

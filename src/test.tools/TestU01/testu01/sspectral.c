@@ -28,24 +28,28 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "num.h"
-#include "chrono.h"
-#include "tables.h"
+//#include "util.h"
+//#include "num.h"
+//#include "chrono.h"
+//#include "tables.h"
 
-#include "sspectral.h"
-#include "swrite.h"
-#include "wdist.h"
-#include "unif01.h"
+//#include "sspectral.h"
+//#include "swrite.h"
+//#include "wdist.h"
+//#include "unif01.h"
 
-#include "gofw.h"
-#include "statcoll.h"
+//#include "gofw.h"
+//#include "statcoll.h"
 
-#include "fftc.c"
+#include "TestU01/suite.h"
 
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
+
+
+
+#include "fftc.c"
 
 
 

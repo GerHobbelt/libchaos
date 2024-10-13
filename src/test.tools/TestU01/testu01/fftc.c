@@ -34,12 +34,15 @@ CC      as long as this header is included                         CC
 CC                                                                 CC
 CC=================================================================CC
 */
+
+#include "TestU01/suite.h"
+
 #include <math.h>
 
 //-------------------Functions Prototypes----------------------------
-void rsrfft (double *x, int m);
-void rstage (int n, int n2, int n4, double *x1, double *x2, double *x3, double *x4);
-void rbitrev (double *x, int m);
+//void rsrfft (double *x, int m);
+//void rstage (int n, int n2, int n4, double *x1, double *x2, double *x3, double *x4);
+//void rbitrev (double *x, int m);
 //-------------------------------------------------------------------
 
 
