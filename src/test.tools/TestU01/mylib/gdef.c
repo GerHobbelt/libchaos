@@ -122,7 +122,7 @@ void gdef_WriteHostName (void)
 }
 
 #if 0
-int main()
+int main(void)
 {
     struct utsname name;
 

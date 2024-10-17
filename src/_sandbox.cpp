@@ -13,7 +13,7 @@
 #define main chaos_sandbox_main
 #endif
 
-int main() {
+int main(void) {
 	std::random_device rd;
 
 	CHAOS_MACHINE_NCG gen;

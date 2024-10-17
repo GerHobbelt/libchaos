@@ -2691,7 +2691,7 @@ _LT_AC_TAGVAR(objext, $1)=$objext
 lt_simple_compile_test_code="int some_variable = 0;\n"
 
 # Code to be used in simple link tests
-lt_simple_link_test_code='int main(){return(0);}\n'
+lt_simple_link_test_code='int main(void){return(0);}\n'
 
 _LT_AC_SYS_COMPILER
 
@@ -4730,7 +4730,7 @@ void nm_test_func(){}
 #ifdef __cplusplus
 }
 #endif
-int main(){nm_test_var='a';nm_test_func();return(0);}
+int main(void){nm_test_var='a';nm_test_func();return(0);}
 EOF
 
   if AC_TRY_EVAL(ac_compile); then
