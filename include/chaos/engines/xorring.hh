@@ -19,6 +19,8 @@ namespace engines { //::chaos::engines /////////////////////////////////////////
 
 class xorring32 {
 public:
+	virtual ~xorring32() = default;
+
 	// metadata
 	CHAOS_META_DEFINE("xorring32", "Maciej A. Czyzewski");
 
@@ -66,6 +68,8 @@ private:
 
 class xorring64 {
 public:
+	virtual ~xorring64() = default;
+
 	// metadata
 	CHAOS_META_DEFINE("xorring64", "Maciej A. Czyzewski");
 

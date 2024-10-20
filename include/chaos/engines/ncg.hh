@@ -13,6 +13,8 @@ namespace engines { //::chaos::engines /////////////////////////////////////////
 
 class ncg {
 public:
+	virtual ~ncg() = default;
+
 	// metadata
 	CHAOS_META_DEFINE("NCG (Naive Czyzewski Generator)", "Maciej A. Czyzewski");
 

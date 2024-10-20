@@ -13,6 +13,8 @@ namespace engines { //::chaos::engines /////////////////////////////////////////
 
 class empty {
 public:
+	virtual ~empty() = default;
+
 	// metadata
 	CHAOS_META_DEFINE("Empty (Blank Template)", "Libchaos Authors");
 
