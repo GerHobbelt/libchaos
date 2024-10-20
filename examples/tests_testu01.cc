@@ -3,8 +3,6 @@
 
 #include <iostream>
 
-#if 01
-
 #include "TestU01/suite.h"
 
 //extern "C" {
@@ -41,27 +39,32 @@ double UNIF01_NEXT_ADAPTER5() { return CHAOS_DOUBLE_U32(x_5.next()); }
 
 int main(void) {
 	unif01_Gen *gen;
-	gen = unif01_CreateExternGen01(CHAOS_META_NAME(CHAOS_MACHINE_XORRING64),
-	                               UNIF01_NEXT_ADAPTER1);
+	CHAOS_MACHINE_XORRING64 inst;
+	gen = unif01_CreateExternGen01(inst.name.c_str(), UNIF01_NEXT_ADAPTER1);
 
-	// smarsa_BirthdaySpacings(gen, NULL, 1, 1000, 0, 10000, 2, 1);
-	// smarsa_BirthdaySpacings(gen, NULL, 1, 10000, 0, 1000000, 2, 1);
+#if 0
+	smarsa_BirthdaySpacings(gen, NULL, 1, 1000, 0, 10000, 2, 1);
+	smarsa_BirthdaySpacings(gen, NULL, 1, 10000, 0, 1000000, 2, 1);
 
-	// smarsa_BirthdaySpacings(gen, NULL, 3, 200000, 14, 256, 8, 1);
-	// smarsa_BirthdaySpacings(gen, NULL, 3, 20000000, 14, 256, 8, 1);
+	smarsa_BirthdaySpacings(gen, NULL, 3, 200000, 14, 256, 8, 1);
+	smarsa_BirthdaySpacings(gen, NULL, 3, 20000000, 14, 256, 8, 1);
 
-	// bbattery_BlockAlphabit(gen, 1024 * 1024, 0, 8);
-	// bbattery_Alphabit(gen, 1024 * 1024, 0, 8);
+	bbattery_BlockAlphabit(gen, 1024 * 1024, 0, 8);
+	bbattery_Alphabit(gen, 1024 * 1024, 0, 8);
 
-	// bbattery_FIPS_140_2(gen);
-	// bbattery_Rabbit(gen, 10000000);
+	bbattery_FIPS_140_2(gen);
+	bbattery_Rabbit(gen, 10000000);
+#endif
+
 	bbattery_pseudoDIEHARD(gen);
 
-	// bbattery_SmallCrush(gen);
-	// bbattery_Crush(gen);
-	// bbattery_BigCrush(gen);
+#if 0
+	bbattery_SmallCrush(gen);
+	bbattery_Crush(gen);
+	bbattery_BigCrush(gen);
+#endif
 
 	unif01_DeleteExternGenBits(gen);
-}
 
-#endif
+	return 0;
+}

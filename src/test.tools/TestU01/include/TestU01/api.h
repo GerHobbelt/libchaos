@@ -1084,11 +1084,11 @@ unif01_Gen * unif01_CreateCombAdd3 (unif01_Gen *g1, unif01_Gen *g2,   unif01_Gen
 unif01_Gen * unif01_CreateCombXor3 (unif01_Gen *g1, unif01_Gen *g2,   unif01_Gen *g3, char *mess   );
 unif01_Gen * unif01_CreateParallelGen (int k, unif01_Gen *gen[], int L   );
 void unif01_DeleteParallelGen (unif01_Gen *gen   );
-unif01_Gen *unif01_CreateExternGen01 (char *name, double (*f_U01)(void)   );
+unif01_Gen *unif01_CreateExternGen01 (const char *name, double (*f_U01)(void)   );
 void unif01_DeleteExternGen01 (unif01_Gen * gen   );
-unif01_Gen *unif01_CreateExternGenBits (char *name,    unsigned int (*f_Bits)(void)   );
+unif01_Gen *unif01_CreateExternGenBits (const char *name,    unsigned int (*f_Bits)(void)   );
 void unif01_DeleteExternGenBits (unif01_Gen * gen   );
-unif01_Gen *unif01_CreateExternGenBitsL (char *name,    unsigned long (*f_Bits)(void)   );
+unif01_Gen *unif01_CreateExternGenBitsL (const char *name,    unsigned long (*f_Bits)(void)   );
 void unif01_DeleteExternGenBitsL (unif01_Gen * gen   );
 void unif01_TimerGen (unif01_Gen *gen, unif01_TimerRec * pt, long n,    lebool fU01   );
 void unif01_TimerSumGen (unif01_Gen *gen, unif01_TimerRec * pt, long n,    lebool fU01   );

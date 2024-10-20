@@ -70,9 +70,6 @@ namespace chaos { //::chaos ////////////////////////////////////////////////////
 
 #define CHAOS_META_DEFINE(a, b) std::string name = a, authors = b
 
-#define CHAOS_META_NAME(module) ({ module inst; inst.name; })
-#define CHAOS_META_AUTHORS(module) ({ module inst; inst.authors; })
-
 /// special ////////////////////////////////////////////////////////////////////
 
 #define __chaos_note(S, ...)                                                   \
