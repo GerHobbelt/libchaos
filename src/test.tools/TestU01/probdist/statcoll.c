@@ -35,8 +35,6 @@
 
 #include "TestU01/suite.h"
 
-#include <stddef.h>
-#include <string.h>
 
 
 #define MAXLEN 127                /* Max number of chars in Desc field of a

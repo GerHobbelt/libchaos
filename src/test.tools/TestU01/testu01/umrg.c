@@ -39,10 +39,6 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <float.h>
-
 
 #ifdef USE_GMP
 #include <gmp.h>
@@ -50,7 +46,7 @@
 
 
 
-#define  LEN  300                 /* Max length of strings */
+#define  SLEN  300                 /* Max length of strings */
 #define  MASK32 0xffffffffUL      /* 2^32 - 1 */
 
 
@@ -503,7 +499,7 @@ static unif01_Gen * CreateMRG_all (long m, int k, long AA[], long SS[])
    MRG_param *param;
    MRG_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i;
    long *A, *S, *Q, *R;
 
@@ -514,7 +510,7 @@ static unif01_Gen * CreateMRG_all (long m, int k, long AA[], long SS[])
    param = util_Malloc (sizeof (MRG_param));
    state = util_Malloc (sizeof (MRG_state));
 
-   strncpy (name, "umrg_CreateMRG:", (size_t) LEN);
+   strncpy (name, "umrg_CreateMRG:", (size_t) SLEN);
    addstr_Long (name, "   m = ", m);
    addstr_Long (name, ",   k = ", k);
    addstr_ArrayLong (name, ",   A = ", k, AA);
@@ -583,7 +579,7 @@ unif01_Gen * umrg_CreateMRG (long m, int k, long A[], long S[])
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i, n;
    long r, q;
    long R[8] = { 0 };
@@ -727,7 +723,7 @@ unif01_Gen * umrg_CreateMRG (long m, int k, long A[], long S[])
       return CreateMRG_all (m, k, A, S);
    }
 
-   strncpy (name, "umrg_CreateMRG:", (size_t) LEN);
+   strncpy (name, "umrg_CreateMRG:", (size_t) SLEN);
    addstr_Long (name, "   m = ", m);
    addstr_Long (name, ",   k = ", k);
    addstr_ArrayLong (name, ",   A = ", k, A);
@@ -822,7 +818,7 @@ unif01_Gen * umrg_CreateMRGFloat (long m, int k, long AA[], long SS[])
    MRGFloat_param *param;
    MRGFloat_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i, n;
    double *A, *S;
    double pr1, pr2;
@@ -834,7 +830,7 @@ unif01_Gen * umrg_CreateMRGFloat (long m, int k, long AA[], long SS[])
    param = util_Malloc (sizeof (MRGFloat_param));
    state = util_Malloc (sizeof (MRGFloat_state));
 
-   strncpy (name, "umrg_CreateMRGFloat:", (size_t) LEN);
+   strncpy (name, "umrg_CreateMRGFloat:", (size_t) SLEN);
    addstr_Long (name, "   m = ", m);
    addstr_Long (name, ",   k = ", k);
    addstr_ArrayLong (name, ",   A = ", k, AA);
@@ -990,7 +986,7 @@ unif01_Gen * umrg_CreateC2MRG (long m1, long m2, int k, long A1[], long A2[],
    CombMRG3_param *param;
    CombMRG3_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i;
    long cs1[4], cs2[4], cq1[4] = {0}, cq2[4] = {0}, cr1[4] = {0},
         cr2[4] = {0}, ca1[4], ca2[4];
@@ -1002,7 +998,7 @@ unif01_Gen * umrg_CreateC2MRG (long m1, long m2, int k, long A1[], long A2[],
    param = util_Malloc (sizeof (CombMRG3_param));
    state = util_Malloc (sizeof (CombMRG3_state));
 
-   strncpy (name, "umrg_CreateC2MRG:", (size_t) LEN);
+   strncpy (name, "umrg_CreateC2MRG:", (size_t) SLEN);
    addstr_Long (name, "   m1 = ", m1);
    addstr_Long (name, ",   m2 = ", m2);
    addstr_Long (name, ",   k = ", k);
@@ -1132,7 +1128,7 @@ unif01_Gen *umrg_CreateBigMRG (char *m, int k, char *A[], char *S[])
    BigMRG_param *param;
    BigMRG_state *state;
    size_t len1, len2;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i, flag;
 
    gen = util_Malloc (sizeof (unif01_Gen));
@@ -1142,7 +1138,7 @@ unif01_Gen *umrg_CreateBigMRG (char *m, int k, char *A[], char *S[])
    /* These flags are set to 0 if the corresponding element is 0 */
    param->AnonZero = util_Calloc ((size_t) k + 1, sizeof (lebool));
 
-   strncpy (name, "umrg_CreateBigMRG:", (size_t) LEN);
+   strncpy (name, "umrg_CreateBigMRG:", (size_t) SLEN);
    strcat (name, "   m = ");
    strcat (name, m);
    addstr_Long (name, ",   k = ", k);
@@ -1161,7 +1157,7 @@ unif01_Gen *umrg_CreateBigMRG (char *m, int k, char *A[], char *S[])
          len2 += strlen (S[i]);
    }
 
-   gen->name = util_Calloc (len2 + LEN, sizeof (char));
+   gen->name = util_Calloc (len2 + SLEN, sizeof (char));
    strncpy (gen->name, name, len2);
    AddArrayString (gen->name, ",   A = ", k, A);
    AddArrayString (gen->name, ",   S = ", k, S);
@@ -1335,7 +1331,7 @@ unif01_Gen *umrg_CreateBigC2MRG (char *m1, char *m2, int k,
    BigC2MRG_param *param;
    BigC2MRG_state *state;
    size_t len1, len2;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i, flag;
 
    gen = util_Malloc (sizeof (unif01_Gen));
@@ -1346,7 +1342,7 @@ unif01_Gen *umrg_CreateBigC2MRG (char *m1, char *m2, int k,
    param->A1nonZero = util_Calloc ((size_t) k + 1, sizeof (lebool));
    param->A2nonZero = util_Calloc ((size_t) k + 1, sizeof (lebool));
 
-   strncpy (name, "umrg_CreateBigC2MRG:", (size_t) LEN);
+   strncpy (name, "umrg_CreateBigC2MRG:", (size_t) SLEN);
    strcat (name, "   m1 = ");
    strcat (name, m1);
    strcat (name, ",   m2 = ");
@@ -1376,7 +1372,7 @@ unif01_Gen *umrg_CreateBigC2MRG (char *m1, char *m2, int k,
          len2 += strlen (S1[i]);
    }
 
-   gen->name = util_Calloc (len2 + LEN, sizeof (char));
+   gen->name = util_Calloc (len2 + SLEN, sizeof (char));
    strncpy (gen->name, name, len2);
    AddArrayString (gen->name, ",   A1 = ", k, A1);
    AddArrayString (gen->name, ",   A2 = ", k, A2);
@@ -1677,7 +1673,7 @@ unif01_Gen * umrg_CreateLagFibFloat (int k, int r, char Op, int Lux,
    LagFibFloat_param *param;
    LagFibFloat_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    char chaine[2];
    int j;
    double *X;
@@ -1690,7 +1686,7 @@ unif01_Gen * umrg_CreateLagFibFloat (int k, int r, char Op, int Lux,
    param = util_Malloc (sizeof (LagFibFloat_param));
    state = util_Malloc (sizeof (LagFibFloat_state));
 
-   strncpy (name, "umrg_CreateLagFibFloat:", (size_t) LEN);
+   strncpy (name, "umrg_CreateLagFibFloat:", (size_t) SLEN);
    addstr_Long (name, "   k = ", k);
    addstr_Long (name, ",   r = ", r);
    strcat (name, ",   Op = ");
@@ -2079,7 +2075,7 @@ unif01_Gen * umrg_CreateLagFib (int t, int k, int r, char Op, int Lux,
    LagFib_param *param;
    LagFib_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    char chaine[2];
    int j;
    unsigned long *X;

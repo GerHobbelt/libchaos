@@ -46,9 +46,6 @@
 
 #include "TestU01/suite.h"
 
-#include <math.h>
-#include <float.h>
-#include <stdlib.h>
 
 
 #define LENGTH 100

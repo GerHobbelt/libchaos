@@ -37,7 +37,6 @@ CC=================================================================CC
 
 #include "TestU01/suite.h"
 
-#include <math.h>
 
 //-------------------Functions Prototypes----------------------------
 //void rsrfft (double *x, int m);

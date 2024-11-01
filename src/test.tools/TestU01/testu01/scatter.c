@@ -37,14 +37,13 @@
 
 #include "TestU01/suite.h"
 
-#include <string.h>
 #include <stdio.h>
 
 
 
 #define NUM_CHAR 100              /* Maximum length of file names */
 
-#define LEN 250                   /* Maximum length of strings */
+#define SLEN 250                   /* Maximum length of strings */
 
 
 
@@ -81,7 +80,7 @@ static char Nout3[NUM_CHAR + 1] = { 0 }; /* Names of results file */
 static char S[NUM_CHAR + 1] = { 0 };
 static char str[NUM_CHAR + 1] = { 0 }; /* Working strings */
 
-static char Title[LEN + 1] = { 0 };
+static char Title[SLEN + 1] = { 0 };
 
 static int precision;             /* Number of decimals for the points */
 
@@ -407,7 +406,7 @@ static void BottomGraphTex (
 
    if ((p = strstr (gen->name, "Read"))) {
       /* This generator is from ufile. Write complete generator's name */
-      strncpy (Title, gen->name, (size_t) LEN);
+      strncpy (Title, gen->name, (size_t) SLEN);
       p = strchr (gen->name, '\n');
       if (p)
          mystr_Subst (Title, "\n", "\n\n");
@@ -539,7 +538,7 @@ static void HeadGraphGnu (
 
    if ((p = strstr (gen->name, "Read"))) {
       /* This generator is from ufile. Write complete generator's name */
-      strncpy (Title, gen->name, (size_t) LEN);
+      strncpy (Title, gen->name, (size_t) SLEN);
    } else {
       /* Remove initial seeds from gen name */
       p = strchr (gen->name, ':');
@@ -551,7 +550,7 @@ static void HeadGraphGnu (
       gnuplot. Process it specially to print the generator name */
    p = strchr (gen->name, '\n');
    if (p) {
-      strncat (Title, p, (size_t) LEN);
+      strncat (Title, p, (size_t) SLEN);
       p = strchr (Title, '\n');
       q = Title;
       while (p) {

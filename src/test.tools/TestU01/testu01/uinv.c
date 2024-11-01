@@ -38,16 +38,13 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <limits.h>
 
 
 
 
 /*============================= Constants ===============================*/
 
-#define  LEN  300                  /* Max string length */
+#define  SLEN  300                  /* Max string length */
 #define  MASK31 0x7fffffffUL       /* Mask of 31 bits */
 #define  MASK32 0xffffffffUL       /* Mask of 32 bits */
 
@@ -265,7 +262,7 @@ unif01_Gen *uinv_CreateInvImpl (long m, long a1, long a2, long z0)
    InvImpl_param *param;
    InvImpl_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((z0 < 0) || (z0 >= m) || (a1 <= 0) || (a1 >= m) ||
       (a2 <= 0) || (a2 >= m) || (m < 2) || ((m % 2) == 0))
@@ -428,7 +425,7 @@ unif01_Gen *uinv_CreateInvImpl2a (int e, unsigned long a1, unsigned long a2,
    InvImpl2a_param *param;
    InvImpl2a_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned long M;
 
    if (((z0 % 2) == 0) || ((a2 % 2) == 0) || ((a1 % 2) != 0) ||
@@ -588,7 +585,7 @@ unif01_Gen *uinv_CreateInvImpl2b (int e, unsigned long a1, unsigned long a2,
    InvImpl2b_param *param;
    InvImpl2b_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned long M;
 
    M = num_TwoExp[e];
@@ -684,7 +681,7 @@ unif01_Gen *uinv_CreateInvExpl (long m, long a, long c)
    InvExpl_param *param;
    InvExpl_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((a <= 0) || (c < 0) || (a >= m) || (c >= m) || ((m % 2) == 0))
       util_Error ("uinv_CreateInvExpl:   Invalid parameter");
@@ -773,7 +770,7 @@ unif01_Gen *uinv_CreateInvExpl2a (int e, long a, long c)
    InvExpl2a_param *param;
    InvExpl2a_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned long M;
 
    M = num_TwoExp[e];
@@ -866,7 +863,7 @@ unif01_Gen *uinv_CreateInvExpl2b (int e, long a, long c)
    InvExpl2b_param *param;
    InvExpl2b_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned long M;
 
    M = num_TwoExp[e];
@@ -975,7 +972,7 @@ unif01_Gen *uinv_CreateInvMRG (long m, int k, long A[], long S[])
    InvMRG_param *param;
    InvMRG_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i, n;
    long *aa, *ss, *qq, *rr;
 
@@ -1122,7 +1119,7 @@ unif01_Gen *uinv_CreateInvMRGFloat (long m, int k, long A[], long S[])
    InvMRGFloat_param *param;
    InvMRGFloat_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i;
    unsigned int n;
    double pr1, pr2;

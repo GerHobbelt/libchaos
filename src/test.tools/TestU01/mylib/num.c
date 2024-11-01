@@ -34,10 +34,7 @@
 
 #include "TestU01/suite.h"
 
-#include <math.h>
-#include <string.h>
 #include <stdio.h>
-#include <limits.h>
 
 
 

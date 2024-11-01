@@ -34,8 +34,6 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <ctype.h>
-#include <string.h>
 
 
 void mystr_Delete (char S[], unsigned int index, unsigned int len)

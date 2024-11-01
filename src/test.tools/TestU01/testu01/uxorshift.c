@@ -36,9 +36,9 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
 
-#define  LEN 200
+
+#define  SLEN 200
 
 #define  MASK32 0xffffffffUL       /* Mask of 32 bits */
 
@@ -232,7 +232,7 @@ unif01_Gen *uxorshift_CreateXorshift32 (int a, int b, int c, unsigned int y)
    unif01_Gen *gen;
    unsigned long *p1;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    Shift3_param *param;
 
    util_Assert ((a < 32) && (a > -32),
@@ -444,7 +444,7 @@ unif01_Gen *uxorshift_CreateXorshift64 (int a, int b, int c, ulonglong y)
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    Shift3_param *param;
    ulonglong *state;
 
@@ -601,7 +601,7 @@ unif01_Gen *uxorshift_CreateXorshiftC (int a, int b, int c, int N,
    unif01_Gen *gen;
    int i;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    XorshiftC_param *param;
    XorshiftC_state *state;
 
@@ -715,7 +715,7 @@ unif01_Gen *uxorshift_CreateXorshiftD (int N, int b[], unsigned int S[])
    unif01_Gen *gen;
    int i;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    XorshiftD_param *param;
    XorshiftD_state *state;
 
@@ -821,7 +821,7 @@ unif01_Gen *uxorshift_CreateXorshift7 (unsigned int S[])
    unif01_Gen *gen;
    Xorshift7_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int j;
 
    gen = util_Malloc (sizeof (unif01_Gen));
@@ -830,7 +830,7 @@ unif01_Gen *uxorshift_CreateXorshift7 (unsigned int S[])
       state->X[j] = S[j];
    state->k = 0;
 
-   strncpy (name, "uxorshift_CreateXorshift7:", LEN);
+   strncpy (name, "uxorshift_CreateXorshift7:", SLEN);
    addstr_ArrayUint (name, "   S = ", 8, S);
    leng = strlen (name);
    gen->name = util_Calloc (leng + 1, sizeof (char));
@@ -896,7 +896,7 @@ unif01_Gen *uxorshift_CreateXorshift13 (unsigned int S[])
    unif01_Gen *gen;
    Xorshift13_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int j;
 
    gen = util_Malloc (sizeof (unif01_Gen));
@@ -905,7 +905,7 @@ unif01_Gen *uxorshift_CreateXorshift13 (unsigned int S[])
       state->X[j] = S[j];
    state->k = 0;
 
-   strncpy (name, "uxorshift_CreateXorshift13:", LEN);
+   strncpy (name, "uxorshift_CreateXorshift13:", SLEN);
    addstr_ArrayUint (name, "   S = ", 8, S);
    leng = strlen (name);
    gen->name = util_Calloc (leng + 1, sizeof (char));

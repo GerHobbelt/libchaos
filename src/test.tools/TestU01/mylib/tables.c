@@ -36,11 +36,7 @@
 
 #include "TestU01/suite.h"
 
-#include <stdlib.h>
 #include <stdio.h>
-#include <math.h>
-#include <string.h>
-
 
 
 
@@ -334,7 +330,7 @@ void tables_WriteTabLL (longlong V[], int n1, int n2, int k, int p,
    if (k > 1) {
       printf ("Elements  %d  to  %d\n\n", n1, n2);
       for (i = n1; i <= n2; i++) {
-         printf (" %*" PRIdLEAST64, p, V[i]);
+         printf (" %*" PRId64, p, (int64_t)V[i]);
          if (((i + 1 - n1) % k) == 0)
             printf ("\n");
       }
@@ -342,7 +338,7 @@ void tables_WriteTabLL (longlong V[], int n1, int n2, int k, int p,
    } else {
       printf ("\n Index        Element\n");
       for (i = n1; i <= n2; i++)
-         printf ("%6d     %12" PRIdLEAST64 "\n", i, V[i]);
+         printf ("%6d     %12" PRIu64 "\n", i, (int64_t)V[i]);
    }
    printf ("\n");
 }
@@ -356,7 +352,7 @@ void tables_WriteTabULL (ulonglong V[], int n1, int n2, int k, int p,
    if (k > 1) {
       printf ("Elements  %d  to  %d\n\n", n1, n2);
       for (i = n1; i <= n2; i++) {
-         printf (" %*" PRIuLEAST64, p, V[i]);
+         printf (" %*" PRIu64, p, (uint64_t)V[i]);
          if (((i + 1 - n1) % k) == 0)
             printf ("\n");
       }
@@ -364,7 +360,7 @@ void tables_WriteTabULL (ulonglong V[], int n1, int n2, int k, int p,
    } else {
       printf ("\n Index        Element\n");
       for (i = n1; i <= n2; i++)
-         printf ("%6d     %12" PRIuLEAST64 "\n", i, V[i]);
+         printf ("%6d     %12" PRIu64 "\n", i, (uint64_t)V[i]);
    }
    printf ("\n");
 }

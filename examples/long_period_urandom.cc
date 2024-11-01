@@ -4,7 +4,7 @@
 #include <iostream>
 
 // initialize chaos machine (64-bit version)
-CHAOS_MACHINE_XORRING64 longmachine;
+static CHAOS_MACHINE_XORRING64 longmachine;
 
 #if defined(BUILD_MONOLITHIC)
 #define main chaos_long_period_urandom_main

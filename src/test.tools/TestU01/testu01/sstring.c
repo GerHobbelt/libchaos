@@ -47,11 +47,7 @@
 
 #include "TestU01/suite.h"
 
-#include <math.h>
-#include <float.h>
-#include <limits.h>
 #include <stdio.h>
-#include <string.h>
 
 
 

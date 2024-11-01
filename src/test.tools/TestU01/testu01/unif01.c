@@ -37,10 +37,7 @@
 
 #include "TestU01/suite.h"
 
-#include <math.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 
 #define LEN0 500                   /* Length of strings */

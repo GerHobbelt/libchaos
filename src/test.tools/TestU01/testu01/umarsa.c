@@ -37,17 +37,12 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-
-
 
 
 
 /*============================== Constants ==============================*/
 
-#define LEN  200                  /* Max length of strings */
+#define SLEN  200                  /* Max length of strings */
 
 #define MASK8  0xff               /* Mask of 8 bits */
 #define MASK16 0xffff             /* Mask of 16 bits */
@@ -191,7 +186,7 @@ unif01_Gen *umarsa_CreateKISS93 (unsigned int s1, unsigned int s2,
    unif01_Gen *gen;
    KISS_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if (s3 > 2147483647)
       util_Error ("umarsa_CreateKISS93:   s3 >= 2^31");
@@ -263,7 +258,7 @@ unif01_Gen *umarsa_CreateKISS96 (unsigned int x, unsigned int y,
    unif01_Gen *gen;
    KISS_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (KISS_state));
@@ -333,7 +328,7 @@ unif01_Gen *umarsa_CreateKISS99 (unsigned int x, unsigned int y,
    unif01_Gen *gen;
    KISS_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (KISS_state));
@@ -406,7 +401,7 @@ unif01_Gen *umarsa_CreateULTRA (unsigned int x, unsigned int y,
    unif01_Gen *gen;
    ULTRA_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned int js;
    int i;
 
@@ -477,7 +472,7 @@ unif01_Gen *umarsa_CreateSupDup73 (unsigned int x, unsigned int y)
    unif01_Gen *gen;
    SupDup73_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
 
    util_Warning (!(x & 1), "umarsa_CreateSupDup73:   x reset to odd");
@@ -564,7 +559,7 @@ static unif01_Gen *CreateSupDup96 (unsigned int x, unsigned int y,
    SupDup96_state *state;
    unsigned int *p;   
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (op == '+' || op == 'x',
       "umarsa_CreateSupDup96:   op must be '+' or 'x'");
@@ -674,7 +669,7 @@ static unif01_Gen *CreateSupDup64 (ulonglong x, ulonglong y, ulonglong a,
    SupDup64_state *state;
    SupDup64_param *param;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (SupDup64_state));
@@ -786,7 +781,7 @@ unif01_Gen *umarsa_CreateMarsa90a (int s1, int s2, int s3, int s4,
    unif01_Gen *gen;
    Marsa90a_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned int s;
    unsigned int t, M, j;
 
@@ -917,7 +912,7 @@ unif01_Gen *umarsa_CreateRANMAR (int s1, int s2, int s3, int s4)
    RANMAR_state *state;
    RANMAR_param *param;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    double s, t;
    unsigned int M, k, j;
 
@@ -1016,7 +1011,7 @@ unif01_Gen *umarsa_CreateMother0 (unsigned long s1, unsigned long s2,
    unif01_Gen *gen;
    Mother0_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if (c > 2111119494) {
       util_Error ("umarsa_CreateMother0:   Invalid parameter");
@@ -1091,7 +1086,7 @@ unif01_Gen *umarsa_CreateCombo (unsigned int x1, unsigned int x2,
    unif01_Gen *gen;
    Combo_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((y1 >= 65536) || (c > 30903)) {
       util_Error ("umarsa_CreateCombo:   Invalid parameter");
@@ -1232,7 +1227,7 @@ static unif01_Gen *CreateECG (char *nom, unsigned int x1, unsigned int x2,
    ECG_param *param;
    ECG_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (ECG_state));
@@ -1353,7 +1348,7 @@ unif01_Gen *umarsa_CreateMWC97R (unsigned int I1, unsigned int I2)
    unif01_Gen *gen;
    MWC97R_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    gen->state = state = util_Malloc (sizeof (MWC97R_state));
@@ -1423,7 +1418,7 @@ unif01_Gen *umarsa_Create4LFIB99 (unsigned int T[256])
    unif01_Gen *gen;
    LFIB4_99_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int j;
 
    gen = util_Malloc (sizeof (unif01_Gen));
@@ -1489,7 +1484,7 @@ unif01_Gen *umarsa_Create3SHR99 (unsigned int I1)
    unif01_Gen *gen;
    unsigned long *p1;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    p1 = gen->state = util_Malloc (sizeof (unsigned long));
@@ -1560,7 +1555,7 @@ unif01_Gen *umarsa_CreateSWB99 (unsigned int T[256], int b)
    unif01_Gen *gen;
    SWB_99_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int j;
 
    gen = util_Malloc (sizeof (unif01_Gen));

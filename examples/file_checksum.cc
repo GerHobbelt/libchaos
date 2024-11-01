@@ -6,9 +6,9 @@
 #include <chaos.h>
 #include <chaos/monolithic_examples.h>
 
-CHAOS_MACHINE_XORRING64 gen;
+static CHAOS_MACHINE_XORRING64 gen;
 
-void READ(const char *filename) {
+static void READ(const char *filename) {
 	std::ifstream ifs(filename);
 	std::vector<CHAOS_MACHINE_XORRING64::size_push> vec;
 

@@ -7,7 +7,7 @@
 #include <chaos.h>
 #include <chaos/monolithic_examples.h>
 
-CHAOS_MACHINE_NCG gen;
+static CHAOS_MACHINE_NCG gen;
 
 #if defined(BUILD_MONOLITHIC)
 #define main chaos_normal_dist_diagram_main

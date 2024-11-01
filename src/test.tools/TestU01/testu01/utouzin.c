@@ -38,7 +38,6 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
 
 
 typedef struct {
@@ -61,7 +60,7 @@ typedef struct {
    unsigned long x10, x11, x12, x20, x21, x22, x30, x31, x32;
 } MRG00g_state;
 
-#define  LEN 200
+#define  SLEN 200
 
 
 
@@ -141,12 +140,12 @@ unif01_Gen * utouzin_CreateMRG00a (long s1, long s2, long s3, long s4,
    unif01_Gen *gen;
    MRG00a_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (MRG00a_state));
 
-   strncpy (name, "utouzin_CreateMRG00a:", LEN);
+   strncpy (name, "utouzin_CreateMRG00a:", SLEN);
    addstr_Long (name, "   s1 = ", s1);
    addstr_Long (name, ",  s2 = ", s2);
    addstr_Long (name, ",  s3 = ", s3);
@@ -257,12 +256,12 @@ unif01_Gen * utouzin_CreateMRG00b (long s1, long s2, long s3,
    unif01_Gen *gen;
    MRG00b_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (MRG00b_state));
 
-   strncpy (name, "utouzin_CreateMRG00b:", LEN);
+   strncpy (name, "utouzin_CreateMRG00b:", SLEN);
    addstr_Long (name, "   s1 = ", s1);
    addstr_Long (name, ",  s2 = ", s2);
    addstr_Long (name, ",  s3 = ", s3);
@@ -409,12 +408,12 @@ unif01_Gen * utouzin_CreateMRG00c (long s1, long s2, long s3,
    unif01_Gen *gen;
    MRG00c_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (MRG00c_state));
 
-   strncpy (name, "utouzin_CreateMRG00c:", LEN);
+   strncpy (name, "utouzin_CreateMRG00c:", SLEN);
    addstr_Long (name, "   s1 = ", s1);
    addstr_Long (name, ",  s2 = ", s2);
    addstr_Long (name, ",  s3 = ", s3);
@@ -547,12 +546,12 @@ unif01_Gen * utouzin_CreateMRG00d (long s1, long s2, long s3,
    unif01_Gen *gen;
    MRG00d_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (MRG00d_state));
 
-   strncpy (name, "utouzin_CreateMRG00d:", LEN);
+   strncpy (name, "utouzin_CreateMRG00d:", SLEN);
    addstr_Long (name, "   s1 = ", s1);
    addstr_Long (name, ",  s2 = ", s2);
    addstr_Long (name, ",  s3 = ", s3);
@@ -671,12 +670,12 @@ unif01_Gen * utouzin_CreateMRG00e (long s10, long s11, long s12,
    unif01_Gen *gen;
    MRG00e_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (MRG00e_state));
 
-   strncpy (name, "utouzin_CreateMRG00e:", LEN);
+   strncpy (name, "utouzin_CreateMRG00e:", SLEN);
    addstr_Long (name, "  s10 = ", s10);
    addstr_Long (name, ",  s11 = ", s11);
    addstr_Long (name, ",  s12 = ", s12);
@@ -786,12 +785,12 @@ unif01_Gen * utouzin_CreateMRG00f (long s10, long s11, long s12,
    unif01_Gen *gen;
    MRG00f_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (MRG00f_state));
 
-   strncpy (name, "utouzin_CreateMRG00f:", LEN);
+   strncpy (name, "utouzin_CreateMRG00f:", SLEN);
    addstr_Long (name, "  s10 = ", s10);
    addstr_Long (name, ",  s11 = ", s11);
    addstr_Long (name, ",  s12 = ", s12);
@@ -927,12 +926,12 @@ unif01_Gen * utouzin_CreateMRG00g (long s10, long s11, long s12,
    unif01_Gen *gen;
    MRG00g_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (MRG00g_state));
 
-   strncpy (name, "utouzin_CreateMRG00g:", LEN);
+   strncpy (name, "utouzin_CreateMRG00g:", SLEN);
    addstr_Long (name, "  s10 = ", s10);
    addstr_Long (name, ",  s11 = ", s11);
    addstr_Long (name, ",  s12 = ", s12);
@@ -1071,12 +1070,12 @@ unif01_Gen * utouzin_CreateMRG00h (long s10, long s11, long s12,
    unif01_Gen *gen;
    MRG00h_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (MRG00h_state));
 
-   strncpy (name, "utouzin_CreateMRG00h:", LEN);
+   strncpy (name, "utouzin_CreateMRG00h:", SLEN);
    addstr_Long (name, "  s10 = ", s10);
    addstr_Long (name, ",  s11 = ", s11);
    addstr_Long (name, ",  s12 = ", s12);

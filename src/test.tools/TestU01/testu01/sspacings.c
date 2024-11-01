@@ -44,8 +44,6 @@
 
 #include "TestU01/suite.h"
 
-#include <math.h>
-#include <string.h>
 #include <stdio.h>
 
 
@@ -56,7 +54,7 @@
 /*------------------------------- Constants -------------------------------*/
 
 /* String length */
-#define LEN 50
+#define SLEN 50
 
 /* Euler's constant */
 static const double EULER = 0.577215664901533;
@@ -161,8 +159,8 @@ static void InitRes (
  * Initializes res
  */
 {
-   char nom[LEN + 1];
-   char spindex[LEN + 1];
+   char nom[SLEN + 1];
+   char spindex[SLEN + 1];
    int j;
 
    if (res->smax < 0) {
@@ -244,25 +242,25 @@ static void InitRes (
    res->smax = 8 * Nbm - 2;
 
    for (j = 0; j < Nbm; j++) {
-      strncpy (nom, "LogCEMu[", (size_t) LEN);
+      strncpy (nom, "LogCEMu[", (size_t) SLEN);
       sprintf (spindex, "%1d", j);
       strncat (nom, spindex, (size_t) 5);
       strncat (nom, "]", (size_t) 2);
       sres_InitBasic (res->LogCEMu[j], N, nom);
 
-      strncpy (nom, "LogCAMu[", (size_t) LEN);
+      strncpy (nom, "LogCAMu[", (size_t) SLEN);
       sprintf (spindex, "%1d", j);
       strncat (nom, spindex, (size_t) 5);
       strncat (nom, "]", (size_t) 2);
       sres_InitBasic (res->LogCAMu[j], N, nom);
 
-      strncpy (nom, "SquareCEMu[", (size_t) LEN);
+      strncpy (nom, "SquareCEMu[", (size_t) SLEN);
       sprintf (spindex, "%1d", j);
       strncat (nom, spindex, (size_t) 5);
       strncat (nom, "]", (size_t) 2);
       sres_InitBasic (res->SquareCEMu[j], N, nom);
 
-      strncpy (nom, "SquareCAMu[", (size_t) LEN);
+      strncpy (nom, "SquareCAMu[", (size_t) SLEN);
       sprintf (spindex, "%1d", j);
       strncat (nom, spindex, (size_t) 5);
       strncat (nom, "]", (size_t) 2);

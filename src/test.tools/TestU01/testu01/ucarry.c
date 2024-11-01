@@ -38,14 +38,12 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 
 
 /*=============================== Constants ===============================*/
 
-#define  LEN 300
+#define  SLEN 300
 
 #define  IDEF    314159265         /* Constants for Ranlux */
 #define  ICONS   2147483563
@@ -184,7 +182,7 @@ static unif01_Gen *Create_AWC_SWB (unsigned int r, unsigned int s,
    AWC_param *param;
    AWC_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned int j, rs;
 
    if ((c != 0 && c != 1) || (s < 1) || (r < 1) || (r == s)) {
@@ -205,7 +203,7 @@ static unif01_Gen *Create_AWC_SWB (unsigned int r, unsigned int s,
 /*   param->skip = Lux - rs; */
    state->X = util_Calloc ((size_t) rs + 1, sizeof (unsigned long));
 
-   strncpy (name, nom, (size_t) LEN);
+   strncpy (name, nom, (size_t) SLEN);
    strcat (name, ":   ");
    addstr_Uint (name, "r = ", r);
    addstr_Uint (name, ",   s = ", s);
@@ -488,7 +486,7 @@ unif01_Gen *ucarry_CreateRanlux (unsigned int Lux, long s)
    Ranlux_param *param;
    Ranlux_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i;
    long z, x0, temp;
 
@@ -499,7 +497,7 @@ unif01_Gen *ucarry_CreateRanlux (unsigned int Lux, long s)
    param = util_Malloc (sizeof (Ranlux_param));
    state = util_Malloc (sizeof (Ranlux_state));
 
-   strncpy (name, "ucarry_CreateRanlux:", (size_t) LEN);
+   strncpy (name, "ucarry_CreateRanlux:", (size_t) SLEN);
    addstr_Ulong (name, "   Lux = ", Lux);
    addstr_Long (name, ",   s = ", s);
    leng = strlen (name);
@@ -599,7 +597,7 @@ unif01_Gen *ucarry_CreateMWC (unsigned int r, unsigned long c,
    MWC_param *param;
    MWC_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned int j;
    ulonglong Suma;
 
@@ -612,7 +610,7 @@ unif01_Gen *ucarry_CreateMWC (unsigned int r, unsigned long c,
    state->X = util_Calloc ((size_t) r, sizeof (unsigned long));
    param->A = util_Calloc ((size_t) r, sizeof (unsigned long));
 
-   strncpy (name, "ucarry_CreateMWC:", (size_t) LEN);
+   strncpy (name, "ucarry_CreateMWC:", (size_t) SLEN);
    addstr_Uint (name, "   r = ", r);
    addstr_Ulong (name, ",   c = ", c);
    addstr_Uint (name, ",   w = ", w);
@@ -738,7 +736,7 @@ unif01_Gen *ucarry_CreateMWCFloat (unsigned int r, unsigned long c,
    MWCFloat_param *param;
    MWCFloat_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned int j;
    double Sum;
 
@@ -750,7 +748,7 @@ unif01_Gen *ucarry_CreateMWCFloat (unsigned int r, unsigned long c,
    state->X = util_Calloc ((size_t) r, sizeof (unsigned long));
    param->A = util_Calloc ((size_t) r, sizeof (unsigned long));
 
-   strncpy (name, "ucarry_CreateMWCFloat:", (size_t) LEN);
+   strncpy (name, "ucarry_CreateMWCFloat:", (size_t) SLEN);
    addstr_Uint (name, "   r = ", r);
    addstr_Ulong (name, ",   c = ", c);
    addstr_Uint (name, ",   w = ", w);
@@ -961,12 +959,12 @@ unif01_Gen *ucarry_CreateMWCfixCouture (unsigned int c, unsigned int S[])
    unif01_Gen *gen;
    MWCfixCouture_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (MWCfixCouture_state));
 
-   strncpy (name, "ucarry_CreateMWCfixCouture:", (size_t) LEN);
+   strncpy (name, "ucarry_CreateMWCfixCouture:", (size_t) SLEN);
    addstr_Uint (name, "   c = ", c);
    addstr_ArrayUint (name, ",   S = ", 8, S);
    leng = strlen (name);
@@ -1088,7 +1086,7 @@ unif01_Gen *ucarry_CreateSWC (unsigned int r, unsigned int h,
    SWC_param *param;
    SWC_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned int j;
 
    if ((w > 32U) || (h > 31U * r)) {
@@ -1100,7 +1098,7 @@ unif01_Gen *ucarry_CreateSWC (unsigned int r, unsigned int h,
    state->X = util_Calloc ((size_t) r, sizeof (unsigned int));
    param->A = util_Calloc ((size_t) h, sizeof (unsigned int));
 
-   strncpy (name, "ucarry_CreateSWC:", (size_t) LEN);
+   strncpy (name, "ucarry_CreateSWC:", (size_t) SLEN);
    addstr_Uint (name, "   r = ", r);
    addstr_Uint (name, ",   h = ", h);
    addstr_Uint (name, ",   c = ", c);
@@ -1195,7 +1193,7 @@ unif01_Gen *ucarry_CreateMWC1616 (unsigned int a, unsigned int b,
    MWC1616_state *state;
    MWC1616_param *param;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    gen->state = state = util_Malloc (sizeof (MWC1616_state));

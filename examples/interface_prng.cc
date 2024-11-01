@@ -1,7 +1,7 @@
 #include <chaos.h>
 #include <chaos/monolithic_examples.h>
 
-CHAOS_PRNG_XOROSHIRO128PLUS prng;
+static CHAOS_PRNG_XOROSHIRO128PLUS prng;
 
 static int test_and_check(uint64_t sollwert, uint64_t check = 0)
 {

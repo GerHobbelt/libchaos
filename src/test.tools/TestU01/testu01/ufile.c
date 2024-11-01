@@ -36,11 +36,10 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
-#include <limits.h>
+
 
 /* Length of strings */
-#define LEN 200
+#define SLEN 200
 
 #define NORM32 2.3283064365386962E-10   /* 1 / 2^32 */
 
@@ -51,7 +50,7 @@
 
 /*========================== module variables ============================*/
 
-static char S[LEN + 1];
+static char S[SLEN + 1];
 
 static FILE *f1, *f2;
 
@@ -147,7 +146,7 @@ unif01_Gen * ufile_CreateReadText (char *A, long dim)
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (dim > 0, "ufile_CreateReadText:   nbuf <= 0.");
    util_Assert (co1 == 0,
@@ -156,8 +155,8 @@ unif01_Gen * ufile_CreateReadText (char *A, long dim)
 
    gen = util_Malloc (sizeof (unif01_Gen));
 
-   strncpy (name, "ufile_CreateReadText:   ", (size_t) LEN);
-   strncat (name, A, (size_t) (LEN - 30));
+   strncpy (name, "ufile_CreateReadText:   ", (size_t) SLEN);
+   strncat (name, A, (size_t) (SLEN - 30));
    leng = strlen (name);
    gen->name = util_Calloc (leng + 1, sizeof (char));
    strncpy (gen->name, name, leng);
@@ -272,7 +271,7 @@ unif01_Gen * ufile_CreateReadBin (char *A, long dim)
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (dim > 0, "ufile_CreateReadBin:   nbuf <= 0.");
    util_Assert (co2 == 0,
@@ -281,8 +280,8 @@ unif01_Gen * ufile_CreateReadBin (char *A, long dim)
 
    gen = util_Malloc (sizeof (unif01_Gen));
 
-   strncpy (name, "ufile_CreateReadBin:   ", (size_t) LEN);
-   strncat (name, A, (size_t) LEN - 30);
+   strncpy (name, "ufile_CreateReadBin:   ", (size_t) SLEN);
+   strncat (name, A, (size_t) SLEN - 30);
    leng = strlen (name);
    gen->name = util_Calloc (leng + 1, sizeof (char));
    strncpy (gen->name, name, leng);

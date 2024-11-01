@@ -12,7 +12,7 @@
  * modification, are permitted without a fee for private, research,
  * academic, or other non-commercial purposes.
  * Any use of this software in a commercial environment requires a
- * written licence from the copyright owner.
+ * written license from the copyright owner.
  *
  * Any changes made to this package must be clearly identified as such.
  *
@@ -34,9 +34,6 @@
 
 #include "TestU01/suite.h"
 
-#include <math.h>
-#include <float.h>
-#include <stdlib.h>
 
 #define EPSILON  1.0E-15
 #define MAXI 50
@@ -283,7 +280,7 @@ double num2_Factorial (int n)
    if (n <= 170)
       return Factorials[n];
    util_Warning (1, "num2_Factorial:   n > 170:   return inf");
-   return 1.0 / 0.0;
+   return nan("1");
 }
 
 

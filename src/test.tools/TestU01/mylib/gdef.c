@@ -40,9 +40,7 @@
 #include <windows.h>
 #endif
 
-#include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 
 #ifdef HAVE_SYS_UTSNAME_H
 #include <sys/utsname.h>

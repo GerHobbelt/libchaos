@@ -41,15 +41,12 @@
 
 #include "TestU01/suite.h"
 
-#include <string.h>
 #include <stdio.h>
-#include <math.h>
-#include <limits.h>
 
 
 long fmultin_Maxn = 16777216;
 
-#define LEN 127
+#define SLEN 127
 #define LEN2 50
 #define LEN3 10
 
@@ -125,7 +122,7 @@ static void InitRes (
  */
 {
    int s, i;
-   char str[LEN + 1] = { 0 };
+   char str[SLEN + 1] = { 0 };
    char str2[LEN2 + 1] = { 0 };
    smultin_Param *parold = res->Par;
    Nr = util_Min (Nr, fam->Ng);
@@ -137,7 +134,7 @@ static void InitRes (
 
    for (s = 0; s < par->NbDelta; s++) {
       if (fabs (par->ValDelta[s] + 1.0) < EPSILON) {
-         strncpy (str, name, (size_t) LEN);
+         strncpy (str, name, (size_t) SLEN);
          if (Over) {
             strncat (str, ": CollisionOver test", (size_t) LEN2);
             ftab_DeleteTable (res->COApprox);
@@ -154,11 +151,11 @@ static void InitRes (
             strncat (str, ": Collision test", (size_t) LEN2);
          }
          fres_InitPoisson (fam, res->Coll, Nr, j1, j2, jstep, str);
-         strncpy (str, name, (size_t) LEN);
+         strncpy (str, name, (size_t) SLEN);
          strncat (str, ": empty cells", (size_t) LEN2);
          fres_InitPoisson (fam, res->Empty, Nr, j1, j2, jstep, str);
          for (i = 1; i <= par->bmax; i++) {
-            strncpy (str, name, (size_t) LEN);
+            strncpy (str, name, (size_t) SLEN);
             strncat (str, ": cells with at least ", (size_t) LEN2);
             sprintf (str2, "%1d", i);
             strncat (str, str2, (size_t) 3);
@@ -167,7 +164,7 @@ static void InitRes (
          }
       }
 
-      strncpy (str, name, (size_t) LEN);
+      strncpy (str, name, (size_t) SLEN);
       strncat (str, ": ValDelta = ", (size_t) LEN2);
       sprintf (str2, "%6.3f,", par->ValDelta[s]);
       strncat (str, str2, (size_t) LEN2);

@@ -39,8 +39,6 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
-
 
 
 

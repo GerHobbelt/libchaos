@@ -41,7 +41,6 @@
 
 #include "TestU01/suite.h"
 
-#include <string.h>
 
 long fwalk_Maxn = 4194304;
 long fwalk_MaxL = 4194304;
@@ -59,7 +58,7 @@ enum {
    B_ALGON
 };
 
-#define LEN 50
+#define SLEN 50
 
 
 
@@ -72,11 +71,11 @@ static void InitRes1 (ffam_Fam * fam, fwalk_Res1 * res, int N,
  * Initializes the fwalk_Res1 structure
  */
 {
-   char str[LEN + 1];
+   char str[SLEN + 1];
    size_t len;
 
-   strncpy (str, name, (size_t) LEN);
-   strncat (str, ", Statistic H", (size_t) LEN - 20);
+   strncpy (str, name, (size_t) SLEN);
+   strncat (str, ", Statistic H", (size_t) SLEN - 20);
    len = strlen (str);
    fres_InitCont (fam, res->H, N, Nr, j1, j2, jstep, str);
    str[len - 1] = 'M';

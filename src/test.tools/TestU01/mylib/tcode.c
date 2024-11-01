@@ -31,10 +31,7 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
 #include <errno.h>
-#include <string.h>
 
 
 

@@ -43,14 +43,11 @@
 
 #include "TestU01/suite.h"
 
-#include <math.h>
-#include <stdlib.h>
-#include <string.h>
 
 
-
+#if 0
 #include "fftc.c"
-
+#endif
 
 
 

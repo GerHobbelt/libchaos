@@ -1,7 +1,7 @@
 #include <chaos.h>
 #include <chaos/monolithic_examples.h>
 
-CHAOS_MACHINE_XORRING64 machine;
+static CHAOS_MACHINE_XORRING64 machine;
 
 static int test(uint64_t sollwert, uint64_t check) {
 	int rv = (check != sollwert);

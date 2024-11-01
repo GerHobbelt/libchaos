@@ -38,15 +38,13 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
-
 
 
 
 
 /*=============================== Macros ===============================*/
 
-#define LEN  300                     /* Max length of strings */
+#define SLEN  300                     /* Max length of strings */
 
 #define MATRIX_A 0x9908b0dfUL        /* constant vector a for MT19937 */
 #define UPPER_MASK 0x80000000UL      /* most significant w - r bits   */
@@ -282,7 +280,7 @@ static unif01_Gen *CreateGFSR0 (unsigned int k, unsigned int r,
    GFSR_param *param;
    GFSR_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned int j;
    unsigned long Mask;
 
@@ -399,7 +397,7 @@ unif01_Gen * ugfsr_CreateRipley90 (long s)
    GFSR_param *param;
    GFSR_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned long x0[RIPk2];
    unsigned long wi, wt;
    long vt, ix, i, j;                /* Work variables */
@@ -465,7 +463,7 @@ unif01_Gen * ugfsr_CreateToot73 (unsigned long S[])
    GFSR_param *param;
    GFSR_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    long q, l, m, n;
    int h, t, j, i, K = 607, R = 273;
    unsigned long Q[700], Mask;
@@ -563,7 +561,7 @@ unif01_Gen *ugfsr_CreateFushimi90 (int s)
    GFSR_state *state;
    GFSR_param *param;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    param = util_Malloc (sizeof (GFSR_param));
@@ -597,7 +595,7 @@ unif01_Gen *ugfsr_CreateFushimi (int k, int r, int s)
    GFSR_state *state;
    GFSR_param *param;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    param = util_Malloc (sizeof (GFSR_param));
@@ -634,7 +632,7 @@ unif01_Gen *ugfsr_CreateKirk81 (long s)
    GFSR_state *state;
    GFSR_param *param;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned long mask, msb;
    unsigned int j, k;
    long vt;
@@ -714,7 +712,7 @@ unif01_Gen *ugfsr_CreateTGFSR (unsigned int k, unsigned int r,
 {
    unif01_Gen *gen;
    GFSR_param *param;
-   char name[LEN + 1] = "";
+   char name[SLEN + 1] = "";
    size_t leng;
 
    gen = CreateGFSR0 (k, r, l, S, "ugfsr_CreateTGFSR:");
@@ -766,7 +764,7 @@ unif01_Gen *ugfsr_CreateT800 (unsigned long S[])
 {
    unif01_Gen *gen;
    GFSR_param *param;
-   char name[LEN + 1] = "";
+   char name[SLEN + 1] = "";
    size_t leng;
 
    gen = CreateGFSR0 (25, 18, 32, S, "ugfsr_CreateT800:");
@@ -820,7 +818,7 @@ unif01_Gen *ugfsr_CreateTGFSR2 (unsigned int k, unsigned int r,
 {
    unif01_Gen *gen;
    TGFSR2_param *param;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    size_t leng;
 
    gen = CreateGFSR0 (k, r, l, S, "");
@@ -1387,7 +1385,7 @@ unif01_Gen *ugfsr_CreateMT19937_02 (unsigned long seed,
    MT19937_param *param;
    MT19937_state *state;
    unsigned long S[NN];
-   char name[LEN + 1];
+   char name[SLEN + 1];
    size_t leng;
 
    gen = CreateGFSR0 (NN, MM, 32, S, "");
@@ -1502,7 +1500,7 @@ unif01_Gen *ugfsr_CreateMT19937_98 (unsigned long seed)
    MT19937_param *param;
    unsigned int j;
    unsigned long S[NN];
-   char name[LEN + 1];
+   char name[SLEN + 1];
    size_t leng;
 
    S[0] = seed & 0xffffffffUL;
@@ -1561,7 +1559,7 @@ unif01_Gen *ugfsr_CreateGFSR5 (unsigned int k, unsigned int r1,
    GFSR5_param *param;
    GFSR5_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned int j;
    unsigned long Mask;
 
@@ -1669,7 +1667,7 @@ unif01_Gen *ugfsr_CreateZiff98 (unsigned long S[])
    unif01_Gen *gen;
    GFSR_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned int j, l = 32, Mask;
 
    gen = util_Malloc (sizeof (unif01_Gen));

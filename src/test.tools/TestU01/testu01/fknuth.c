@@ -42,7 +42,6 @@
 
 #include "TestU01/suite.h"
 
-#include <string.h>
 #include <stdio.h>
 
 

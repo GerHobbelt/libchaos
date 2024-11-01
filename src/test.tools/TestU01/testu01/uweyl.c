@@ -36,10 +36,9 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
 
 
-#define LEN 200                   /* Max length of strings */
+#define SLEN 200                   /* Max length of strings */
 
 
 
@@ -114,12 +113,12 @@ static unsigned long Weyl_Bits (void *vpar, void *vsta)
 unif01_Gen *uweyl_CreateWeyl (double Alpha, long n0)
 {
    unif01_Gen *gen;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert ((Alpha > 0.0), "uweyl_CreateWeyl:   Alpha <= 0");
    util_Assert ((Alpha < 1.0), "uweyl_CreateWeyl:   Alpha >= 1");
 
-   strncpy (name, "uweyl_CreateWeyl: ", (size_t) LEN);
+   strncpy (name, "uweyl_CreateWeyl: ", (size_t) SLEN);
    gen = CreateWeyl_0 (Alpha, n0, name);
    gen->GetU01 = &Weyl_U01;
    gen->GetBits = &Weyl_Bits;
@@ -150,12 +149,12 @@ static unsigned long NWeyl_Bits (void *vpar, void *vsta)
 unif01_Gen *uweyl_CreateNWeyl (double Alpha, long n0)
 {
    unif01_Gen *gen;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert ((Alpha > 0.0), "uweyl_CreateNWeyl:   Alpha <= 0");
    util_Assert ((Alpha < 1.0), "uweyl_CreateNWeyl:   Alpha >= 1");
 
-   strncpy (name, "uweyl_CreateNWeyl (nested): ", (size_t) LEN);
+   strncpy (name, "uweyl_CreateNWeyl (nested): ", (size_t) SLEN);
    gen = CreateWeyl_0 (Alpha, n0, name);
    gen->GetU01 = &NWeyl_U01;
    gen->GetBits = &NWeyl_Bits;
@@ -197,7 +196,7 @@ unif01_Gen *uweyl_CreateSNWeyl (long M, double Alpha, long n0)
    SNWeyl_param *param;
    Weyl_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert ((Alpha > 0.0), "uweyl_CreateSNWeyl:   Alpha <= 0");
    util_Assert ((Alpha < 1.0), "uweyl_CreateSNWeyl:   Alpha >= 1");
@@ -211,7 +210,7 @@ unif01_Gen *uweyl_CreateSNWeyl (long M, double Alpha, long n0)
       n0 = -n0;
    state->n = n0;
 
-   strncpy (name, "uweyl_CreateSNWeyl (shuffled nested):", (size_t) LEN);
+   strncpy (name, "uweyl_CreateSNWeyl (shuffled nested):", (size_t) SLEN);
    addstr_Long (name, "   M = ", M);
    addstr_Double (name, ",   Alpha = ", Alpha);
    addstr_Long (name, ",   n0 = ", n0);

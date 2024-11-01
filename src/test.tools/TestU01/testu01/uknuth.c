@@ -16,10 +16,9 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
 
 
-#define LEN  200                  /* Max length of strings */
+#define SLEN  200                  /* Max length of strings */
 
 
 static int co1 = 0, co2 = 0, co3 = 0, co4 = 0;      /* Counters */
@@ -165,7 +164,7 @@ unif01_Gen *uknuth_CreateRan_array1 (long s, long A[])
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int j;
 
    util_Assert (s <= 1073741821,
@@ -353,7 +352,7 @@ unif01_Gen * uknuth_CreateRanf_array1 (long s, double B[])
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int j;
 
    util_Assert (s <= 1073741821,
@@ -530,7 +529,7 @@ unif01_Gen *uknuth_CreateRan_array2 (long s, long A[])
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int j;
 
    util_Assert (s <= 1073741821,
@@ -710,7 +709,7 @@ unif01_Gen * uknuth_CreateRanf_array2 (long s, double B[])
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int j;
 
    util_Assert (s <= 1073741821,

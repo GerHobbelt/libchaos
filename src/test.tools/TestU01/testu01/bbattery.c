@@ -12,7 +12,7 @@
  * modification, are permitted without a fee for private, research,
  * academic, or other non-commercial purposes.
  * Any use of this software in a commercial environment requires a
- * written licence from the copyright owner.
+ * written license from the copyright owner.
  *
  * Any changes made to this package must be clearly identified as such.
  *
@@ -55,14 +55,11 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
 #include <time.h>
-#include <limits.h>
 
 
 
-#define LEN 120
+#define SLEN 120
 #define NAMELEN 30
 #define NDIM 200                  /* Dimension of extern arrays */
 #define THOUSAND 1000
@@ -81,7 +78,7 @@ double bbattery_pVal[1 + NDIM] = { 0 };
 char *bbattery_TestNames[1 + NDIM] = { 0 };
 int bbattery_NTests;
 
-static char CharTemp[LEN + 1];
+static char CharTemp[SLEN + 1];
 
 /* Gives the test number as enumerated in bbattery.tex. Some test applies
    more than one test, so the array of p-values does not correspond with 
@@ -106,20 +103,20 @@ static void GetName (unif01_Gen * gen, char *genName)
 
    /* Print only the generator name, without the parameters or seeds. */
    /* The parameters start after the first blank; name ends with ':' */
-   genName[LEN] = '\0';
+   genName[SLEN] = '\0';
    len1 = strcspn (gen->name, ":");
-   len1 = util_Min (LEN, len1);
+   len1 = util_Min (SLEN, len1);
    strncpy (genName, gen->name, (size_t) len1);
    genName[len1] = '\0';
    /* For Filters or Combined generators */
    p = strstr (&gen->name[1 + len1], "unif01");
    while (p != NULL) {
       len1 += 2;
-      if (len1 >= LEN)
+      if (len1 >= SLEN)
          return;
       strcat (genName, ", ");
       len2 = strcspn (p, " \0");
-      len2 = util_Min (LEN - len1, len2);
+      len2 = util_Min (SLEN - len1, len2);
       if (len2 <= 0)
          return;
       strncat (genName, p, (size_t) len2);
@@ -260,62 +257,62 @@ static void GetPVal_Walk (long N, swalk_Res * res, int *pj, char *mess, int j2)
       TestNumber[j] = j2;
       strcpy (CharTemp, "RandomWalk1 H");
       strncat (CharTemp, mess, (size_t) len);
-      strncpy (bbattery_TestNames[j], CharTemp, (size_t) LEN);
+      strncpy (bbattery_TestNames[j], CharTemp, (size_t) SLEN);
 
       bbattery_pVal[++j] = res->M[0]->pVal2[gofw_Mean];
       TestNumber[j] = j2;
       strcpy (CharTemp, "RandomWalk1 M");
       strncat (CharTemp, mess, (size_t) len);
-      strncpy (bbattery_TestNames[j], CharTemp, (size_t) LEN);
+      strncpy (bbattery_TestNames[j], CharTemp, (size_t) SLEN);
 
       bbattery_pVal[++j] = res->J[0]->pVal2[gofw_Mean];
       TestNumber[j] = j2;
       strcpy (CharTemp, "RandomWalk1 J");
       strncat (CharTemp, mess, (size_t) len);
-      strncpy (bbattery_TestNames[j], CharTemp, (size_t) LEN);
+      strncpy (bbattery_TestNames[j], CharTemp, (size_t) SLEN);
 
       bbattery_pVal[++j] = res->R[0]->pVal2[gofw_Mean];
       TestNumber[j] = j2;
       strcpy (CharTemp, "RandomWalk1 R");
       strncat (CharTemp, mess, (size_t) len);
-      strncpy (bbattery_TestNames[j], CharTemp, (size_t) LEN);
+      strncpy (bbattery_TestNames[j], CharTemp, (size_t) SLEN);
 
       bbattery_pVal[++j] = res->C[0]->pVal2[gofw_Mean];
       TestNumber[j] = j2;
       strcpy (CharTemp, "RandomWalk1 C");
       strncat (CharTemp, mess, (size_t) len);
-      strncpy (bbattery_TestNames[j], CharTemp, (size_t) LEN);
+      strncpy (bbattery_TestNames[j], CharTemp, (size_t) SLEN);
 
    } else {
       bbattery_pVal[++j] = res->H[0]->pVal2[gofw_Sum];
       TestNumber[j] = j2;
       strcpy (CharTemp, "RandomWalk1 H");
       strncat (CharTemp, mess, (size_t) len);
-      strncpy (bbattery_TestNames[j], CharTemp, (size_t) LEN);
+      strncpy (bbattery_TestNames[j], CharTemp, (size_t) SLEN);
 
       bbattery_pVal[++j] = res->M[0]->pVal2[gofw_Sum];
       TestNumber[j] = j2;
       strcpy (CharTemp, "RandomWalk1 M");
       strncat (CharTemp, mess, (size_t) len);
-      strncpy (bbattery_TestNames[j], CharTemp, (size_t) LEN);
+      strncpy (bbattery_TestNames[j], CharTemp, (size_t) SLEN);
 
       bbattery_pVal[++j] = res->J[0]->pVal2[gofw_Sum];
       TestNumber[j] = j2;
       strcpy (CharTemp, "RandomWalk1 J");
       strncat (CharTemp, mess, (size_t) len);
-      strncpy (bbattery_TestNames[j], CharTemp, (size_t) LEN);
+      strncpy (bbattery_TestNames[j], CharTemp, (size_t) SLEN);
 
       bbattery_pVal[++j] = res->R[0]->pVal2[gofw_Sum];
       TestNumber[j] = j2;
       strcpy (CharTemp, "RandomWalk1 R");
       strncat (CharTemp, mess, (size_t) len);
-      strncpy (bbattery_TestNames[j], CharTemp, (size_t) LEN);
+      strncpy (bbattery_TestNames[j], CharTemp, (size_t) SLEN);
 
       bbattery_pVal[++j] = res->C[0]->pVal2[gofw_Sum];
       TestNumber[j] = j2;
       strcpy (CharTemp, "RandomWalk1 C");
       strncat (CharTemp, mess, (size_t) len);
-      strncpy (bbattery_TestNames[j], CharTemp, (size_t) LEN);
+      strncpy (bbattery_TestNames[j], CharTemp, (size_t) SLEN);
    }
 
    *pj = j;
@@ -404,7 +401,7 @@ static void InitBat (void)
    if (0 == flag) {
       flag++;
       for (j = 0; j < NDIM; j++)
-         bbattery_TestNames[j] = util_Calloc (LEN + 1, sizeof (char));
+         bbattery_TestNames[j] = util_Calloc (SLEN + 1, sizeof (char));
    }
 }
 
@@ -423,7 +420,7 @@ static void SmallCrush (unif01_Gen * gen, char *filename, int Rep[])
    int i;
    int j = -1;
    int j2 = 0;
-   char genName[LEN + 1] = "";
+   char genName[SLEN + 1] = "";
    chrono_Chrono *Timer;
    sres_Poisson *res1;
    sres_Chi2 *res2;
@@ -628,7 +625,7 @@ static void Crush (unif01_Gen * gen, int Rep[])
    const int r = 0;
    int i;
    chrono_Chrono *Timer;
-   char genName[LEN + 1] = "";
+   char genName[SLEN + 1] = "";
    int j = -1;
    int j2 = 0;
 
@@ -1634,7 +1631,7 @@ static void BigCrush (unif01_Gen * gen, int Rep[])
    const int r = 0;
    int i;
    chrono_Chrono *Timer;
-   char genName[LEN + 1] = "";
+   char genName[SLEN + 1] = "";
    int j = -1;
    int j2 = 0;
 
@@ -2749,9 +2746,9 @@ static void Alphabit (unif01_Gen * gen, char *fname, double nb, int r, int s,
    int i;
    lebool fileFlag;
    long bufsiz;
-   char genName[LEN + 1] = "";
+   char genName[SLEN + 1] = "";
    double z;
-   unif01_Gen *gen0;
+   unif01_Gen *gen0 = NULL;
 
    Timer = chrono_Create ();
  /*  t0 = time (NULL); */
@@ -3300,7 +3297,7 @@ static void Rabbit (unif01_Gen * gen, char *fname, double nb, int Rep[])
    chrono_Chrono *Timer;
    long bufsiz;
    lebool fileFlag;
-   char genName[LEN + 1] = "";
+   char genName[SLEN + 1] = "";
 
    Timer = chrono_Create ();
    InitBat ();
@@ -3841,7 +3838,7 @@ void bbattery_pseudoDIEHARD (unif01_Gen * gen)
    chrono_Chrono *Timer;
    smultin_Param *par = NULL;
    double ValDelta[] = { 1 };
-   char genName[LEN + 1] = "";
+   char genName[SLEN + 1] = "";
    int k, i, j = -1;
    int j2 = 0;
    double x;
@@ -4275,7 +4272,7 @@ static void FIPS_140_2 (unif01_Gen * gen, char *filename)
    unsigned long Z;               /* Block of 32 bits */
    unsigned long Bits[SAMPLE + 1];
    lebool fileFlag = FALSE;
-   char genName[LEN + 1] = "";
+   char genName[SLEN + 1] = "";
 
    InitBat ();
    if (swrite_Basic) {
@@ -4300,7 +4297,7 @@ static void FIPS_140_2 (unif01_Gen * gen, char *filename)
 
    if (fileFlag) {
       ufile_DeleteReadBin (gen);
-      strncpy (genName, filename, (size_t) LEN);
+      strncpy (genName, filename, (size_t) SLEN);
    } else {
       GetName (gen, genName);
    }

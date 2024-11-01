@@ -38,13 +38,11 @@
 
 #include "TestU01/suite.h"
 
-#include <string.h>
 #include <stdio.h>
-#include <math.h>
 
 
 
-#define LEN 100
+#define SLEN 100
 
 
 lebool swrite_Basic = TRUE;
@@ -56,7 +54,7 @@ lebool swrite_Others = FALSE;
 
 lebool swrite_Host = TRUE;
 
-char swrite_ExperimentName[LEN + 1] = "";
+char swrite_ExperimentName[SLEN + 1] = "";
 
 
 
@@ -64,7 +62,7 @@ char swrite_ExperimentName[LEN + 1] = "";
 
 void swrite_SetExperimentName (char Name[])
 {
-   strncpy (swrite_ExperimentName, Name, (size_t) LEN);
+   strncpy (swrite_ExperimentName, Name, (size_t) SLEN);
 }
 
 

@@ -40,11 +40,10 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
 #include <time.h>
-#include <limits.h>
 
-#define LEN  200                  /* Max length of strings */
+
+#define SLEN  200                  /* Max length of strings */
 #define MAX_SIZE 64               /* number of ASCII char's in a key */
 
 
@@ -123,7 +122,7 @@ static void increment32 (uint32_t A[], int n)
 /*-------------------------------------------------------------------------*/
 #if 0
 
-int main ()
+int main (void)
 {
 #if 0
    unsigned char A[] = { 25, 255, 254 };
@@ -139,7 +138,9 @@ int main ()
       }
       printf ("\n");
    }
+	 return 0;
 }
+
 #endif
 
 
@@ -257,7 +258,7 @@ unif01_Gen * ucrypto_CreateAES (unsigned char *Key, int KeyLen,
    AES_param *param;
    AES_state *state;
    size_t len1;
-   char name[LEN + 1] = {0};
+   char name[SLEN + 1] = {0};
    char str[16] = {0};
    int i;
    unsigned int D[64];
@@ -293,9 +294,9 @@ unif01_Gen * ucrypto_CreateAES (unsigned char *Key, int KeyLen,
       util_Error ("ucrypto_CreateAES, klen:   no such case");
    }
 
-   strncpy (name, "ucrypto_CreateAES:   mode = ", (size_t) LEN);
+   strncpy (name, "ucrypto_CreateAES:   mode = ", (size_t) SLEN);
    getStringMode (mode, str);
-   strncat (name, str, (size_t) LEN);
+   strncat (name, str, (size_t) SLEN);
    addstr_Int (name, ",   r = ", r);
    addstr_Int (name, ",   s = ", s);
    addstr_Long (name, ",   klen = ", (long) KeyLen);
@@ -352,7 +353,7 @@ void ucrypto_DeleteAES (unif01_Gen * gen)
 
 
 /*=========================================================================*/
-#define SLEN 55
+#define HSLEN 55  // TODO: huh?!   shouldn't this be 64 (sizeof(state->V[])   [GHo]
 
 static unsigned long SHA1_Bits (void *junk, void *vsta)
 {
@@ -371,9 +372,9 @@ static unsigned long SHA1_Bits (void *junk, void *vsta)
             break;
          case ucrypto_CTR:
             SHA1Init (&state->context);
-            SHA1Update (&state->context, state->V, SLEN);
+            SHA1Update (&state->context, state->V, HSLEN);
             SHA1Final (state->output, &state->context);
-            increment8 (state->V, SLEN);      /* V = V + 1 mod 2^440 */
+            increment8 (state->V, HSLEN);      /* V = V + 1 mod 2^440 */
             break;
          default:
             util_Error ("ucrypto_CreateSHA1:   no such mode");
@@ -439,7 +440,7 @@ unif01_Gen * ucrypto_CreateSHA1 (unsigned char *Seed, int len, ucrypto_Mode mode
    int i;
    unsigned int D[SLEN];
    size_t len1;
-   char name[LEN + 1] = {0};
+   char name[SLEN + 1] = {0};
    char str[16] = {0};
 
    util_Assert (4 == sizeof (uint32_t),
@@ -453,9 +454,9 @@ unif01_Gen * ucrypto_CreateSHA1 (unsigned char *Seed, int len, ucrypto_Mode mode
    memset (state, 0, sizeof (SHA1_state));
    if (r < 0) r = 0;
 
-   strncpy (name, "ucrypto_CreateSHA1:   mode = ", (size_t) LEN);
+   strncpy (name, "ucrypto_CreateSHA1:   mode = ", (size_t) SLEN);
    getStringMode (mode, str);
-   strncat (name, str, (size_t) LEN);
+   strncat (name, str, (size_t) SLEN);
    addstr_Int (name, ",   r = ", r);
    addstr_Int (name, ",   s = ", s);
    addstr_Int (name, ",   len = ", len);
@@ -509,9 +510,14 @@ void ucrypto_DeleteSHA1 (unif01_Gen * gen)
    util_Free (gen);
 }
 
+#if 0
+
 #undef SLEN
 
 /*=========================================================================*/
 /* Generator ISAAC */
 
 #include "ucryptoIS.c"
+
+#endif
+

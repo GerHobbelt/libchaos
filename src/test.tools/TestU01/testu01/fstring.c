@@ -28,18 +28,18 @@
  *
 \*************************************************************************/
 
-#include "util.h"
-#include "gofs.h"
+//#include "util.h"
+//#include "gofs.h"
 
-#include "fstring.h"
-#include "fcho.h"
-#include "ffam.h"
-#include "fres.h"
-#include "ftab.h"
-#include "sstring.h"
-#include "unif01.h"
+//#include "fstring.h"
+//#include "fcho.h"
+//#include "ffam.h"
+//#include "fres.h"
+//#include "ftab.h"
+//#include "sstring.h"
+//#include "unif01.h"
 
-#include <string.h>
+#include "TestU01/suite.h"
 
 
 long fstring_Maxn = 1024*1024*4;
@@ -179,7 +179,7 @@ static int ChooseParam (int prec, void *cho, cho_Type ver,
    fcho_Cho *cho1 = cho;
    fcho_Cho2 *cho2 = cho;
    fcho_Cho *chon;
-   fcho_Cho *choL;
+   fcho_Cho *choL = NULL;
 
    switch (ver) {
    case CHO_STRING:

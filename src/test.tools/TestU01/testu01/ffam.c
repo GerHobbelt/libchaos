@@ -36,10 +36,12 @@
 
 #include "TestU01/suite.h"
 
-#include <string.h>
 
 #define MAXCAR  256                /* Max length of a line */
 
+#ifndef DIR_SEPARATOR
+#define DIR_SEPARATOR   "/"
+#endif
 
 
 

@@ -16,11 +16,10 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
 
 
 
-#define LEN  200                  /* Max length of strings */
+#define SLEN  200                  /* Max length of strings */
 
 
 #ifdef USE_LONGLONG
@@ -72,7 +71,7 @@ static unsigned long LCGWu61a_Bits (void *vpar, void *vsta)
 static void WrLCGWu61 (void *vsta)
 {
    LCGWu61_state *state = vsta;
-   printf (" S = %1" PRIuLEAST64 " \n\n", state->S);
+   printf (" S = %1" PRIu64 " \n\n", (uint64_t)state->S);
 }
 
 /*-----------------------------------------------------------------------*/
@@ -82,7 +81,7 @@ unif01_Gen * uwu_CreateLCGWu61a (longlong s)
    unif01_Gen *gen;
    LCGWu61_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (LCGWu61_state));
@@ -143,7 +142,7 @@ unif01_Gen * uwu_CreateLCGWu61b (longlong s)
    unif01_Gen *gen;
    LCGWu61_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (LCGWu61_state));

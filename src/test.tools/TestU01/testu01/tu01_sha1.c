@@ -84,7 +84,6 @@ A million repetitions of "a"
 
 #include "TestU01/suite.h"
 
-#include <string.h>
 
 #undef SHA1HANDSOFF   /* Copies data before messing with it */
 

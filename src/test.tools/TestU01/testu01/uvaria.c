@@ -38,10 +38,6 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-
 
 
 
@@ -54,7 +50,7 @@ static int co = 0;                 /* Counter for Ranrot */
 
 #define INV31 4.656612875245796E-10  /* 1 / (2^31 - 1) */
 
-#define LEN  200                  /* Max length of strings */
+#define SLEN  200                  /* Max length of strings */
 
 
 
@@ -154,7 +150,7 @@ unif01_Gen * uvaria_CreateACORN (int k, double S[])
    unif01_Gen *gen;
    ACORN_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int j;
 
    if (k < 1) {
@@ -270,7 +266,7 @@ unif01_Gen * uvaria_CreateTindo (long b, long Delta, int l, int k)
    Tindo_param *param;
    Tindo_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i;
 
    util_Assert (k > 0, "uvaria_CreateTindo:   must have k > 0");
@@ -365,7 +361,7 @@ unif01_Gen * uvaria_CreateCSD (long v, long s)
    unif01_Gen *gen;
    CSD_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (v >= 0, "uvaria_CreateCSD:   must have v >= 0");
    util_Assert (v <= 9999, "uvaria_CreateCSD:   must have v <= 9999");
@@ -522,7 +518,7 @@ unif01_Gen * uvaria_CreateRanrotB (unsigned int s)
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (co == 0,
       "uvaria_CreateRanrotB:   only 1 generator at a time can be in use");
@@ -599,7 +595,7 @@ unif01_Gen * uvaria_CreateRey97 (double a1, double a2, double b2, long n0)
    Rey97_state *state;
    Rey97_param *param;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (Rey97_state));

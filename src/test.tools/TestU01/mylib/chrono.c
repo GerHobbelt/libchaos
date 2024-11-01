@@ -41,7 +41,6 @@
 
 #include <time.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 #if defined(HAVE_WINDOWS_H) || defined(_WIN32)
 

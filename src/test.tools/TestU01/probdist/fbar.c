@@ -38,15 +38,13 @@
 
 #include "TestU01/suite.h"
 
-#include <math.h>
-#include <float.h>
 
 double fdist_belog(double);
 extern const double fdist_XINF;
 extern const double fdist_XBIG;
 extern const double fdist_XBIGM;
 
-/* EpsArray[j]: Epsilon required for j decimal degits of precision */
+/* EpsArray[j]: Epsilon required for j decimal digits of precision */
 static const double EpsArray[] = {
    0.5, 0.5E-1, 0.5E-2, 0.5E-3, 0.5E-4, 0.5E-5, 0.5E-6, 0.5E-7, 0.5E-8,
    0.5E-9, 0.5E-10, 0.5E-11, 0.5E-12, 0.5E-13, 0.5E-14, 0.5E-15, 0.5E-16,

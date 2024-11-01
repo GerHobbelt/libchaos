@@ -39,11 +39,6 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <string.h>
-
-
 
 #ifdef HAVE_MATHEMATICA
 #include <pthread.h>
@@ -60,7 +55,7 @@
 #define MASK32       4294967295             /* 2^32 - 1 */
 #define MASK5        31                     /* 2^5  - 1 */
 
-#define LEN    200                          /* Max length of strings */
+#define SLEN    200                          /* Max length of strings */
 
 
 
@@ -156,7 +151,7 @@ unif01_Gen * usoft_CreateSPlus (long s1, long s2)
    SPlus_state *state;
    SPlus_param *param;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (s1 > 0, "usoft_CreateSPlus:   must have s1 > 0");
    util_Assert (s1 < DeuxExp31m1,
@@ -244,7 +239,7 @@ unif01_Gen * usoft_CreateUnixRandom (unsigned int s)
    unif01_Gen *gen;
    unsigned seed;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (coUnix == 0,
       "usoft_CreateUnixRandom:   only 1 generator at a time can be in use");
@@ -338,7 +333,7 @@ unif01_Gen * usoft_CreateJava48 (ulonglong s, int jflag)
    Java48_param *param;
    Java48_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if (s > MASK48)
       util_Error ("usoft_CreateJava48:   s >= 281474976710656");
@@ -405,7 +400,7 @@ unif01_Gen * usoft_CreateExcel97 (double r)
    unif01_Gen *gen;
    Excel97_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if (r < 0.0 || r >= 1.0)
       util_Error ("usoft_CreateExcel97:   r must be in [0, 1)");
@@ -435,7 +430,7 @@ unif01_Gen * usoft_CreateExcel2003 (int x0, int y0, int z0)
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    gen = ulcg_CreateCombWH3 (30323, 30307, 30269, 170, 172, 171,
                              0, 0, 0, x0, y0, z0);
    strcpy (name, "usoft_CreateExcel2003:");
@@ -481,7 +476,7 @@ unif01_Gen * usoft_CreateVisualBasic (unsigned long s)
    unif01_Gen *gen;
    VisualBasic_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (VisualBasic_state));
@@ -510,7 +505,7 @@ unif01_Gen * usoft_CreateMaple_9 (longlong s)
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    char str[20];
 
    sprintf (str, "%1" PRIdLEAST64, s);
@@ -604,7 +599,7 @@ unif01_Gen * usoft_CreateMATLAB (int i, unsigned int j0, int b, double Z[])
    unif01_Gen *gen;
    MATLAB5_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int r;
 
    strcpy (name, "usoft_CreateMATLAB:");
@@ -759,7 +754,7 @@ unif01_Gen *usoft_CreateMathematicaReal (int argc, char *argv[], long s)
    long errno;
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if (argc == 1) {
       util_Error ("usoft_CreateMathematicaReal:\n\n   Usage:  <prog> -linkname 'math -mathlink' -linklaunch");
@@ -888,7 +883,7 @@ unif01_Gen *usoft_CreateMathematicaInteger (int argc, char *argv[], long s)
    long errno;
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1] = {0};
+   char name[SLEN + 1] = {0};
 
    if (argc == 1) {
       util_Error ("usoft_CreateMathematicaInteger:\n\n   Usage:  <prog> -linkname 'math -mathlink' -linklaunch");

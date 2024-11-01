@@ -41,9 +41,6 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <math.h>
-#include <string.h>
-#include <limits.h>
 
 
 #define MAXLEN 100                /* Max number of chars in Desc[] */

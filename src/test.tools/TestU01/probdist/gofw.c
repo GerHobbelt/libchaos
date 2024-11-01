@@ -42,10 +42,7 @@
 
 #include "TestU01/suite.h"
 
-#include <float.h>
-#include <string.h>
 #include <stdio.h>
-#include <math.h>
 
 
 

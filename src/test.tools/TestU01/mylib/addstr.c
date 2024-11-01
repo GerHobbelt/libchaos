@@ -33,7 +33,7 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
+
 
 
 #define LEN1 63
@@ -79,7 +79,7 @@ void  addstr_LONG (char *to, const char *add, longlong n)
 {
    char str[LEN1 + 1];
    strcat (to, add);
-   sprintf (str, "%1" PRIdLEAST64, n);
+   sprintf (str, "%1" PRId64, (int64_t)n);
    strcat (to, str);
 }
 
@@ -87,7 +87,7 @@ void  addstr_ULONG (char *to, const char *add, ulonglong n)
 {
    char str[LEN1 + 1];
    strcat (to, add);
-   sprintf (str, "%1" PRIuLEAST64, n);
+   sprintf (str, "%1" PRIu64, (uint64_t)n);
    strcat (to, str);
 }
 #endif

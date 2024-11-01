@@ -42,9 +42,6 @@
 
 #include "TestU01/suite.h"
 
-#include <string.h>
-#include <limits.h>
-#include <math.h>
 
 long fmarsa_Maxn = 1024 * 1024 * 32;
 long fmarsa_MaxL = 1024 * 4;

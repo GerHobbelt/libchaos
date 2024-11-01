@@ -39,8 +39,6 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
-#include <limits.h>
 
 #ifdef USE_GMP
 #include <gmp.h>
@@ -49,7 +47,7 @@
 
 /*============================== constants ================================*/
 
-#define  LEN  300                 /* Max length of strings */
+#define  SLEN  300                 /* Max length of strings */
 
 #define DeuxExp32m1	4294967295UL           /* 2^32 - 1 */
 #define DeuxExp31m1	2147483647             /* 2^31 - 1 */
@@ -350,7 +348,7 @@ unif01_Gen *ulcg_CreateLCG (long m, long a, long c, long s)
    LCG_param *param;
    LCG_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((a < 0) || (c < 0) || (s < 0) || (a >= m) || (c >= m) ||
        (s >= m) || (m <= 0))
@@ -360,7 +358,7 @@ unif01_Gen *ulcg_CreateLCG (long m, long a, long c, long s)
    param = util_Malloc (sizeof (LCG_param));
    state = util_Malloc (sizeof (LCG_state));
 
-   strncpy (name, "ulcg_CreateLCG:", (size_t) LEN);
+   strncpy (name, "ulcg_CreateLCG:", (size_t) SLEN);
    addstr_Long (name, "   m = ", m);
    addstr_Long (name, ",   a = ", a);
    addstr_Long (name, ",   c = ", c);
@@ -438,13 +436,13 @@ unif01_Gen *ulcg_CreateBigLCG (char *m, char *a, char *c, char *s)
    BigLCG_param *param;
    BigLCG_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    gen = util_Malloc (sizeof (unif01_Gen));
    param = util_Malloc (sizeof (BigLCG_param));
    state = util_Malloc (sizeof (BigLCG_state));
 
-   strncpy (name, "ulcg_CreateBigLCG:", (size_t) LEN);
+   strncpy (name, "ulcg_CreateBigLCG:", (size_t) SLEN);
    leng = 36 + strlen (name) + strlen (m) + strlen (a) + strlen (c) +
       strlen (s);
    gen->name = util_Calloc (leng + 1, sizeof (char));
@@ -567,7 +565,7 @@ unif01_Gen *ulcg_CreateLCGFloat (long m, long a, long c, long s)
    LCGFloat_param *param;
    LCGFloat_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((c < 0) || ((a < 0) && (c != 0)) || (a >= m) || (c >= m) || (s >= m))
       util_Error ("ulcg_CreateLCGFloat:   Invalid parameter");
@@ -578,7 +576,7 @@ unif01_Gen *ulcg_CreateLCGFloat (long m, long a, long c, long s)
    param = util_Malloc (sizeof (LCGFloat_param));
    state = util_Malloc (sizeof (LCGFloat_state));
 
-   strncpy (name, "ulcg_CreateLCGFloat:", (size_t) LEN);
+   strncpy (name, "ulcg_CreateLCGFloat:", (size_t) SLEN);
    addstr_Long (name, "   m = ", m);
    addstr_Long (name, ",   a = ", a);
    addstr_Long (name, ",   c = ", c);
@@ -644,7 +642,7 @@ unif01_Gen *ulcg_CreateBigPow2LCG (long e, char *a, char *c, char *s)
    BigPow2LCG_param *param;
    BigPow2LCG_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (e > 0, "ulcg_CreateBigPow2LCG:   e < 1");
 
@@ -652,7 +650,7 @@ unif01_Gen *ulcg_CreateBigPow2LCG (long e, char *a, char *c, char *s)
    param = util_Malloc (sizeof (BigPow2LCG_param));
    state = util_Malloc (sizeof (BigPow2LCG_state));
 
-   strncpy (name, "ulcg_CreateBigPow2LCG:   ", (size_t) LEN);
+   strncpy (name, "ulcg_CreateBigPow2LCG:   ", (size_t) SLEN);
    addstr_Long (name, "e = ", e);
    leng = 30 + strlen (name) + strlen (a) + strlen (c) + strlen (s);
    gen->name = util_Calloc (leng + 1, sizeof (char));
@@ -748,7 +746,7 @@ unif01_Gen *ulcg_CreatePow2LCG (int e, long a, long c, long s)
    Pow2LCG_param *param;
    Pow2LCG_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (e <= 31, "ulcg_CreatePow2LCG:   e > 31");
    if (((a <= 0 || c < 0) || s < 0) || e < 0) {
@@ -758,7 +756,7 @@ unif01_Gen *ulcg_CreatePow2LCG (int e, long a, long c, long s)
    param = util_Malloc (sizeof (Pow2LCG_param));
    state = util_Malloc (sizeof (Pow2LCG_state));
 
-   strncpy (name, "ulcg_CreatePow2LCG: ", (size_t) LEN);
+   strncpy (name, "ulcg_CreatePow2LCG: ", (size_t) SLEN);
    addstr_Int (name, "  e = ", e);
    addstr_Long (name, ",   a = ", a);
    addstr_Long (name, ",   c = ", c);
@@ -810,7 +808,7 @@ unif01_Gen *ulcg_CreateLCG2e31 (long a, long c, long s)
    LCG2e31_param *param;
    LCG2e31_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((a <= 0) || (c < 0) || (s <= 0) || (s >= DeuxExp31m1)
       || (c >= DeuxExp31m1) || (a >= DeuxExp31m1))
@@ -820,7 +818,7 @@ unif01_Gen *ulcg_CreateLCG2e31 (long a, long c, long s)
    param = util_Malloc (sizeof (LCG2e31_param));
    state = util_Malloc (sizeof (LCG2e31_state));
 
-   strncpy (name, "ulcg_CreateLCG2e31: ", (size_t) LEN);
+   strncpy (name, "ulcg_CreateLCG2e31: ", (size_t) SLEN);
    addstr_Long (name, "  a = ", a);
    addstr_Long (name, ",   c = ", c);
    addstr_Long (name, ",   s = ", s);
@@ -874,7 +872,7 @@ unif01_Gen *ulcg_CreateLCG2e32 (unsigned long a, unsigned long c,
    LCG2e32_param *param;
    LCG2e32_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((a > DeuxExp32m1) || (c > DeuxExp32m1) || (s > DeuxExp32m1))
       util_Error ("ulcg_CreateLCG2e32:   Invalid parameter");
@@ -883,7 +881,7 @@ unif01_Gen *ulcg_CreateLCG2e32 (unsigned long a, unsigned long c,
    param = util_Malloc (sizeof (LCG2e32_param));
    state = util_Malloc (sizeof (LCG2e32_state));
 
-   strncpy (name, "ulcg_CreateLCG2e32: ", (size_t) LEN);
+   strncpy (name, "ulcg_CreateLCG2e32: ", (size_t) SLEN);
    addstr_Ulong (name, "  a = ", a);
    addstr_Ulong (name, ",   c = ", c);
    addstr_Ulong (name, ",   s = ", s);
@@ -944,7 +942,7 @@ unif01_Gen *ulcg_CreateLCGPayne (long a, long c, long s)
    LCGPayne_param *param;
    LCGPayne_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
 #ifndef USE_LONGLONG
 #ifdef IS_ULONG32
@@ -958,7 +956,7 @@ unif01_Gen *ulcg_CreateLCGPayne (long a, long c, long s)
    param = util_Malloc (sizeof (LCGPayne_param));
    state = util_Malloc (sizeof (LCGPayne_state));
 
-   strncpy (name, "ulcg_CreateLCGPayne:", (size_t) LEN);
+   strncpy (name, "ulcg_CreateLCGPayne:", (size_t) SLEN);
    addstr_Long (name, "   a = ", a);
    addstr_Long (name, ",   c = ", c);
    addstr_Long (name, ",   s = ", s);
@@ -1018,7 +1016,7 @@ unif01_Gen *ulcg_CreateLCG2e31m1HD (long a, long s)
    LCG2e31m1HD_param *param;
    LCG2e31m1HD_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((a <= 1) || (s <= 0) || (s >= DeuxExp31m1)
       || (a >= 1073741824))       /* must have a < 2^30 */
@@ -1028,7 +1026,7 @@ unif01_Gen *ulcg_CreateLCG2e31m1HD (long a, long s)
    param = util_Malloc (sizeof (LCG2e31m1HD_param));
    state = util_Malloc (sizeof (LCG2e31m1HD_state));
 
-   strncpy (name, "ulcg_CreateLCG2e31m1HD: ", (size_t) LEN);
+   strncpy (name, "ulcg_CreateLCG2e31m1HD: ", (size_t) SLEN);
    addstr_Long (name, "  a = ", a);
    addstr_Long (name, ",   s = ", s);
    leng = strlen (name);
@@ -1078,7 +1076,7 @@ unif01_Gen *ulcg_CreateLCG2e48L (ulonglong a, ulonglong c, ulonglong s)
    LCG2e48L_param *param;
    LCG2e48L_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((s >= DeuxExp48) || (a >= DeuxExp48) || (c >= DeuxExp48))
       util_Error ("ulcg_CreateLCG2e48L:   parameter >= 281474976710656");
@@ -1087,7 +1085,7 @@ unif01_Gen *ulcg_CreateLCG2e48L (ulonglong a, ulonglong c, ulonglong s)
    param = util_Malloc (sizeof (LCG2e48L_param));
    state = util_Malloc (sizeof (LCG2e48L_state));
 
-   strncpy (name, "ulcg_CreateLCG2e48L:", (size_t) LEN);
+   strncpy (name, "ulcg_CreateLCG2e48L:", (size_t) SLEN);
    addstr_ULONG (name, "   a = ", a);
    addstr_ULONG (name, ",   c = ", c);
    addstr_ULONG (name, ",   s = ", s);
@@ -1149,7 +1147,7 @@ unif01_Gen *ulcg_CreatePow2LCGL (int e, ulonglong a, ulonglong c, ulonglong s)
    Pow2LCGL_param *param;
    Pow2LCGL_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (e <= 64, "ulcg_CreatePow2LCGL:   e > 64");
    util_Assert (e >  0,  "ulcg_CreatePow2LCGL:   e <= 0");
@@ -1159,7 +1157,7 @@ unif01_Gen *ulcg_CreatePow2LCGL (int e, ulonglong a, ulonglong c, ulonglong s)
    param = util_Malloc (sizeof (Pow2LCGL_param));
    state = util_Malloc (sizeof (Pow2LCGL_state));
 
-   strncpy (name, "ulcg_CreatePow2LCGL: ", (size_t) LEN);
+   strncpy (name, "ulcg_CreatePow2LCGL: ", (size_t) SLEN);
    addstr_Int (name, "  e = ", e);
    addstr_ULONG (name, ",   a = ", a);
    addstr_ULONG (name, ",   c = ", c);
@@ -1294,7 +1292,7 @@ unif01_Gen *ulcg_CreateLCGWu2 (long m, char o1, unsigned int q, char o2,
    Wu2_param *param;
    Wu2_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned int E = 1;
    double w;
 
@@ -1315,7 +1313,7 @@ unif01_Gen *ulcg_CreateLCGWu2 (long m, char o1, unsigned int q, char o2,
    param = util_Malloc (sizeof (Wu2_param));
    state = util_Malloc (sizeof (Wu2_state));
 
-   strncpy (name, "ulcg_CreateLCGWu2: ", (size_t) LEN);
+   strncpy (name, "ulcg_CreateLCGWu2: ", (size_t) SLEN);
    addstr_Long (name, "  m = ", m);
    addstr_Char (name, ",   o1 = ", o1);
    addstr_Long (name, ",   q = ", (long) q);
@@ -1502,7 +1500,7 @@ unif01_Gen *ulcg_CreateCombLEC2 (long m1, long m2, long a1, long a2,
    CombLEC2_param *param;
    CombLEC2_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((a1 < 0) || (c1 < 0) || (s1 < 0) || (a1 >= m1) || (c1 >= m1) ||
       (s1 >= m1) || (a2 < 0) || (c2 < 0) || (s2 < 0) || (a2 >= m2) ||
@@ -1513,7 +1511,7 @@ unif01_Gen *ulcg_CreateCombLEC2 (long m1, long m2, long a1, long a2,
    param = util_Malloc (sizeof (CombLEC2_param));
    state = util_Malloc (sizeof (CombLEC2_state));
 
-   strncpy (name, "ulcg_CreateCombLEC2:", (size_t) LEN);
+   strncpy (name, "ulcg_CreateCombLEC2:", (size_t) SLEN);
    addstr_Long (name, "   m1 = ", m1);
    addstr_Long (name, ",   a1 = ", a1);
    addstr_Long (name, ",   c1 = ", c1);
@@ -1605,7 +1603,7 @@ unif01_Gen *ulcg_CreateCombLEC2Float (long m1, long m2, long a1, long a2,
    CombLEC2Float_param *param;
    CombLEC2Float_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((a1 < 0) || (c1 < 0) || (s1 < 0) || (a1 >= m1) || (c1 >= m1) ||
       (s1 >= m1) || (a2 < 0) || (c2 < 0) || (s2 < 0) || (a2 >= m2) ||
@@ -1621,7 +1619,7 @@ unif01_Gen *ulcg_CreateCombLEC2Float (long m1, long m2, long a1, long a2,
    param = util_Malloc (sizeof (CombLEC2Float_param));
    state = util_Malloc (sizeof (CombLEC2Float_state));
 
-   strncpy (name, "ulcg_CreateCombLEC2Float:", (size_t) LEN);
+   strncpy (name, "ulcg_CreateCombLEC2Float:", (size_t) SLEN);
    addstr_Long (name, "   m1 = ", m1);
    addstr_Long (name, ",   a1 = ", a1);
    addstr_Long (name, ",   c1 = ", c1);
@@ -1810,7 +1808,7 @@ unif01_Gen *ulcg_CreateCombLEC3 (long m1, long m2, long m3, long a1,
    CombLEC3_param *param;
    CombLEC3_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((a1 < 0) || (c1 < 0) || (s1 < 0) || (a1 >= m1) || (c1 >= m1) ||
       (s1 >= m1) || (a2 < 0) || (c2 < 0) || (s2 < 0) || (a2 >= m2) ||
@@ -1823,7 +1821,7 @@ unif01_Gen *ulcg_CreateCombLEC3 (long m1, long m2, long m3, long a1,
    param = util_Malloc (sizeof (CombLEC3_param));
    state = util_Malloc (sizeof (CombLEC3_state));
 
-   strncpy (name, "ulcg_CreateCombLEC3:", (size_t) LEN);
+   strncpy (name, "ulcg_CreateCombLEC3:", (size_t) SLEN);
    addstr_Long (name, "   m1 = ", m1);
    addstr_Long (name, ",   a1 = ", a1);
    addstr_Long (name, ",   c1 = ", c1);
@@ -2015,7 +2013,7 @@ unif01_Gen *ulcg_CreateCombWH2 (long m1, long m2, long a1, long a2,
    CombWH2_param *param;
    CombWH2_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((a1 < 0) || (c1 < 0) || (s1 < 0) || (a1 >= m1) || (c1 >= m1) ||
       (s1 >= m1) || (a2 < 0) || (c2 < 0) || (s2 < 0) || (a2 >= m2) ||
@@ -2026,7 +2024,7 @@ unif01_Gen *ulcg_CreateCombWH2 (long m1, long m2, long a1, long a2,
    param = util_Malloc (sizeof (CombWH2_param));
    state = util_Malloc (sizeof (CombWH2_state));
 
-   strncpy (name, "ulcg_CreateCombWH2:", (size_t) LEN);
+   strncpy (name, "ulcg_CreateCombWH2:", (size_t) SLEN);
    addstr_Long (name, "   m1 = ", m1);
    addstr_Long (name, ",   a1 = ", a1);
    addstr_Long (name, ",   c1 = ", c1);
@@ -2119,7 +2117,7 @@ unif01_Gen *ulcg_CreateCombWH2Float (long m1, long m2, long a1, long a2,
    CombWH2Float_param *param;
    CombWH2Float_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((a1 < 0) || (c1 < 0) || (s1 < 0) || (a1 >= m1) || (c1 >= m1) ||
       (s1 >= m1) || (a2 < 0) || (c2 < 0) || (s2 < 0) || (a2 >= m2) ||
@@ -2136,7 +2134,7 @@ unif01_Gen *ulcg_CreateCombWH2Float (long m1, long m2, long a1, long a2,
    param = util_Malloc (sizeof (CombWH2Float_param));
    state = util_Malloc (sizeof (CombWH2Float_state));
 
-   strncpy (name, "ulcg_CreateCombWH2Float:", (size_t) LEN);
+   strncpy (name, "ulcg_CreateCombWH2Float:", (size_t) SLEN);
    addstr_Long (name, "   m1 = ", m1);
    addstr_Long (name, ",   a1 = ", a1);
    addstr_Long (name, ",   c1 = ", c1);
@@ -2319,7 +2317,7 @@ unif01_Gen *ulcg_CreateCombWH3 (long m1, long m2, long m3, long a1,
    CombWH3_param *param;
    CombWH3_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((a1 < 0) || (c1 < 0) || (s1 < 0) || (a1 >= m1) || (c1 >= m1) ||
       (s1 >= m1) || (a2 < 0) || (c2 < 0) || (s2 < 0) || (a2 >= m2) ||
@@ -2332,7 +2330,7 @@ unif01_Gen *ulcg_CreateCombWH3 (long m1, long m2, long m3, long a1,
    param = util_Malloc (sizeof (CombWH3_param));
    state = util_Malloc (sizeof (CombWH3_state));
 
-   strncpy (name, "ulcg_CreateCombWH3:", (size_t) LEN);
+   strncpy (name, "ulcg_CreateCombWH3:", (size_t) SLEN);
    addstr_Long (name, "   m1 = ", m1);
    addstr_Long (name, ",   a1 = ", a1);
    addstr_Long (name, ",   c1 = ", c1);

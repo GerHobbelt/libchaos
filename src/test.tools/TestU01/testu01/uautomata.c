@@ -37,15 +37,10 @@
 
 #include "TestU01/suite.h"
 
-#include <stdlib.h>
-#include <string.h>
-
-/*
 #include <stdio.h>
-*/
 
 
-#define  LEN  200                  /* Max length of strings */
+#define  SLEN  200                  /* Max length of strings */
 
 
 typedef struct {
@@ -227,7 +222,7 @@ unif01_Gen * uautomata_CreateCA1 (int N, int S[ ], int r, int F[ ],
    CA1_param *param;
    CA1_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    long i;
    unsigned long Z = 0;
    long L;                 /* Dimension of the rule F */
@@ -241,7 +236,7 @@ unif01_Gen * uautomata_CreateCA1 (int N, int S[ ], int r, int F[ ],
    param = util_Malloc (sizeof (CA1_param));
    state = util_Malloc (sizeof (CA1_state));
 
-   strncpy (name, "uautomata_CreateCA1:", (size_t) LEN);
+   strncpy (name, "uautomata_CreateCA1:", (size_t) SLEN);
    addstr_Long (name, "   N = ", (long) N);
    addstr_Long (name, ",   r = ", (long) r);
    L = num_TwoExp[2*r + 1];
@@ -353,13 +348,13 @@ unif01_Gen * uautomata_CreateCA90mp (int m, int S[])
    unif01_Gen *gen;
    CA90mp_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i;
 
    gen = util_Malloc (sizeof (unif01_Gen));
    state = util_Malloc (sizeof (CA90mp_state));
 
-   strncpy (name, "uautomata_CreateCA90mp:", (size_t) LEN);
+   strncpy (name, "uautomata_CreateCA90mp:", (size_t) SLEN);
    addstr_Long (name, "   m = ", (long) m);
    addstr_ArrayInt (name, ",   S = ",  m, S);
    leng = strlen (name);

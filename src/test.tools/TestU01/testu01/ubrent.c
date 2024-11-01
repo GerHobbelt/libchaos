@@ -22,9 +22,9 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
 
-#define LEN  200                  /* Max length of strings */
+
+#define SLEN  200                  /* Max length of strings */
 
 
 typedef struct {
@@ -246,7 +246,7 @@ unif01_Gen * ubrent_CreateXor4096s (unsigned int seed)
    unif01_Gen *gen;
    unsigned int *pseed;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (co1 == 0,
    "ubrent_CreateXor4096s:\n   only 1 such generator can be used at a time");
@@ -355,7 +355,7 @@ unif01_Gen * ubrent_CreateXorgen32 (int r, int s, int a, int b, int c, int d,
    Xorgen32_param *param;
    Xorgen32_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned int t, v;
    const unsigned int wlen = 32;
    int i, k;
@@ -585,7 +585,7 @@ unif01_Gen * ubrent_CreateXor4096l (ulonglong seed)
    unif01_Gen *gen;
    ulonglong *pseed;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (co2 == 0,
    "ubrent_CreateXor4096l:\n   only 1 such generator can be used at a time");
@@ -694,7 +694,7 @@ unif01_Gen * ubrent_CreateXorgen64 (int r, int s, int a, int b, int c, int d,
    Xorgen64_param *param;
    Xorgen64_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    ulonglong t, v;
    const unsigned int wlen = 64;
    int i, k;
@@ -894,7 +894,7 @@ unif01_Gen * ubrent_CreateXor4096d (ulonglong seed)
    unif01_Gen *gen;
    ulonglong *pseed;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (co3 == 0,
    "ubrent_CreateXor4096d:\n   only 1 such generator can be used at a time");
@@ -1074,7 +1074,7 @@ unif01_Gen * ubrent_CreateXor4096i (unsigned long seed)
    unif01_Gen *gen;
    unsigned long *pseed;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (co4 == 0,
       "ubrent_CreateXor4096i:\n   only 1 such generator can be used at a time");
@@ -1207,7 +1207,7 @@ unif01_Gen * ubrent_CreateXor4096r (unsigned long seed)
    unif01_Gen *gen;
    unsigned long *pseed;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (co5 == 0,
    "ubrent_CreateXor4096r:\n   only 1 such generator can be used at a time");

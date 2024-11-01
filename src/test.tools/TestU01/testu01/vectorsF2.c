@@ -3,7 +3,7 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <stdlib.h>
+
 
 #define WL vectorsF2_WL
 

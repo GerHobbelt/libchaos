@@ -35,8 +35,6 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
-#include <limits.h>
 
 
 unsigned long bitset_maskUL[] = {

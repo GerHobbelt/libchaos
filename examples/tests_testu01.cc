@@ -5,6 +5,8 @@
 
 #include "TestU01/suite.h"
 
+namespace {
+
 // Chaos Machines
 
 CHAOS_MACHINE_NCG x_0;
@@ -27,6 +29,8 @@ double UNIF01_NEXT_ADAPTER2() { return CHAOS_DOUBLE_U32(x_2.next()); }
 double UNIF01_NEXT_ADAPTER3() { return CHAOS_DOUBLE_U32(x_3.next()); }
 double UNIF01_NEXT_ADAPTER4() { return CHAOS_DOUBLE_U32(x_4.next()); }
 double UNIF01_NEXT_ADAPTER5() { return CHAOS_DOUBLE_U32(x_5.next()); }
+
+}
 
 #if defined(BUILD_MONOLITHIC)
 #define main chaos_testu01_main

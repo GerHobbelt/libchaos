@@ -13,6 +13,8 @@
 
 #include <chaos/monolithic_examples.h>
 
+namespace {
+
 typedef std::linear_congruential_engine<std::uint_fast32_t, 48271, 0,
                                         2147483647>
     STL_MINSTD_RAND;
@@ -96,6 +98,8 @@ typedef std::shuffle_order_engine<std::minstd_rand0, 256> STL_KNUTH_B;
     algorithm gen;                              \
     BENCHMARK(algorithm, gen(), typename_size); \
   }
+
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 

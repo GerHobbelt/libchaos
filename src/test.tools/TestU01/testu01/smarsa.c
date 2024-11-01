@@ -51,9 +51,7 @@
 
 #include "TestU01/suite.h"
 
-#include <math.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 
 #define LENGTH 200

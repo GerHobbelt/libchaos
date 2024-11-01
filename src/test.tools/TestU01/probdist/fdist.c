@@ -39,10 +39,6 @@
 
 #include "TestU01/suite.h"
 
-#include <stddef.h>
-#include <limits.h>
-#include <float.h>
-#include <math.h>
 
 
 double fdist_belog (double);

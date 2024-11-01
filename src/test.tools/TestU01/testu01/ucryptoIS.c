@@ -15,10 +15,9 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
 
 
-#define LEN  200                  /* Max length of strings */
+#define SLEN  200                  /* Max length of strings */
 
 
 static int co1 = 0;               /* Counter */
@@ -328,7 +327,7 @@ unif01_Gen * ucrypto_CreateISAAC (int flag, unsigned int A[]) {
    ub4 i;
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (co1 == 0,
       "ucrypto_CreateISAAC:   only 1 generator at a time can be in use");

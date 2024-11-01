@@ -37,14 +37,12 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
-
 
 
 
 /*============================== constants ==============================*/
 
-#define LEN  250                  /* Max length of strings */
+#define SLEN  250                  /* Max length of strings */
 
 #define DeuxExp28      268435456
 #define DeuxExp29      536870912
@@ -129,7 +127,7 @@ unif01_Gen * utezuka_CreateTezLec91 (unsigned int Y1, unsigned int Y2)
    TezLec91_param *param;
    TezLec91_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (Y1 < DeuxExp31, "utezuka_CreateTezLec91:   Y1 >= 2^31");
    util_Assert (Y2 < DeuxExp29, "utezuka_CreateTezLec91:   Y2 >= 2^29");
@@ -138,7 +136,7 @@ unif01_Gen * utezuka_CreateTezLec91 (unsigned int Y1, unsigned int Y2)
    param = util_Malloc (sizeof (TezLec91_param));
    state = util_Malloc (sizeof (TezLec91_state));
 
-   strncpy (name, "utezuka_CreateTezLec91:", (size_t) LEN);
+   strncpy (name, "utezuka_CreateTezLec91:", (size_t) SLEN);
    addstr_Uint (name, "   Y1 = ", Y1);
    addstr_Uint (name, ",   Y2 = ", Y2);
    leng = strlen (name);
@@ -198,7 +196,7 @@ unif01_Gen *utezuka_CreateTez95 (unsigned int Y1, unsigned int Y2,
    Tez95_param *param;
    Tez95_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    unsigned int B;
 
    util_Assert (Y1 < DeuxExp28, "utezuka_CreateTez95:   Y1 >= 2^28");
@@ -209,7 +207,7 @@ unif01_Gen *utezuka_CreateTez95 (unsigned int Y1, unsigned int Y2,
    param = util_Malloc (sizeof (Tez95_param));
    state = util_Malloc (sizeof (Tez95_state));
 
-   strncpy (name, "utezuka_CreateTez95:", (size_t) LEN);
+   strncpy (name, "utezuka_CreateTez95:", (size_t) SLEN);
    addstr_Uint (name, "   Y1 = ", Y1);
    addstr_Uint (name, ",   Y2 = ", Y2);
    addstr_Uint (name, ",   Y3 = ", Y3);
@@ -307,7 +305,7 @@ unif01_Gen *utezuka_CreateTezMRG95 (unsigned int Y1[5], unsigned int Y2[7])
    TezMRG95_param *param;
    TezMRG95_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int k;
    unsigned int b;
 
@@ -322,7 +320,7 @@ unif01_Gen *utezuka_CreateTezMRG95 (unsigned int Y1[5], unsigned int Y2[7])
    param = util_Malloc (sizeof (TezMRG95_param));
    state = util_Malloc (sizeof (TezMRG95_state));
 
-   strncpy (name, "utezuka_CreateTezMRG95:", (size_t) LEN);
+   strncpy (name, "utezuka_CreateTezMRG95:", (size_t) SLEN);
    addstr_ArrayUint (name, "   Y1 = ", 5, Y1);
    addstr_ArrayUint (name, ",   Y2 = ", 7, Y2);
    leng = strlen (name);

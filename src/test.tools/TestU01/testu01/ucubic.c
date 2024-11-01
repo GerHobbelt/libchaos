@@ -38,12 +38,10 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 
 
-#define  LEN  150                 /* Max length of strings */
+#define  SLEN  150                 /* Max length of strings */
 
 
 
@@ -311,7 +309,7 @@ unif01_Gen *ucubic_CreateCubic (long m, long a, long b, long c, long d,
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (m > 0, "ucubic_CreateCubic:   m <= 0");
    util_Assert ((a > 0) && (a < m),
@@ -327,7 +325,7 @@ unif01_Gen *ucubic_CreateCubic (long m, long a, long b, long c, long d,
 
    gen = util_Malloc (sizeof (unif01_Gen));
 
-   strncpy (name, "ucubic_CreateCubic:", (size_t) LEN);
+   strncpy (name, "ucubic_CreateCubic:", (size_t) SLEN);
    addstr_Long (name, "   m = ", m);
    addstr_Long (name, ",   a = ", a);
    addstr_Long (name, ",   b = ", b);
@@ -434,7 +432,7 @@ unif01_Gen *ucubic_CreateCubicFloat (long m, long a, long b, long c, long d,
    CubicFloat_param *param;
    CubicFloat_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    double y, v;
 
    util_Assert (m > 0, "ucubic_CreateCubicFloat:   m <= 0");
@@ -453,7 +451,7 @@ unif01_Gen *ucubic_CreateCubicFloat (long m, long a, long b, long c, long d,
    param = util_Malloc (sizeof (CubicFloat_param));
    state = util_Malloc (sizeof (CubicFloat_state));
 
-   strncpy (name, "ucubic_CreateCubicFloat:", (size_t) LEN);
+   strncpy (name, "ucubic_CreateCubicFloat:", (size_t) SLEN);
    addstr_Long (name, "   m = ", m);
    addstr_Long (name, ",   a = ", a);
    addstr_Long (name, ",   b = ", b);
@@ -589,7 +587,7 @@ unif01_Gen *ucubic_CreateCubic1 (long m, long a, long s)
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert ((m > 0), "ucubic_CreateCubic1:   m <= 0");
    util_Assert ((a > 0) && (a < m),
@@ -599,7 +597,7 @@ unif01_Gen *ucubic_CreateCubic1 (long m, long a, long s)
 
    gen = util_Malloc (sizeof (unif01_Gen));
 
-   strncpy (name, "ucubic_CreateCubic1:", (size_t) LEN);
+   strncpy (name, "ucubic_CreateCubic1:", (size_t) SLEN);
    addstr_Long (name, "   m = ", m);
    addstr_Long (name, ",   a = ", a);
    addstr_Long (name, ",   s = ", s);
@@ -699,7 +697,7 @@ unif01_Gen *ucubic_CreateCubic1Float (long m, long a, long s)
    Cubic1Float_param *param;
    Cubic1Float_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    double y;
 
    util_Assert ((m > 0), "ucubic_CreateCubic1Float:   m <= 0");
@@ -712,7 +710,7 @@ unif01_Gen *ucubic_CreateCubic1Float (long m, long a, long s)
    param = util_Malloc (sizeof (Cubic1Float_param));
    state = util_Malloc (sizeof (Cubic1Float_state));
 
-   strncpy (name, "ucubic_CreateCubic1Float:", (size_t) LEN);
+   strncpy (name, "ucubic_CreateCubic1Float:", (size_t) SLEN);
    addstr_Long (name, "   m = ", m);
    addstr_Long (name, ",   a = ", a);
    addstr_Long (name, ",   s = ", s);
@@ -867,7 +865,7 @@ unif01_Gen *ucubic_CreateCombCubic2 (long m1, long m2, long a1, long a2,
 {
    unif01_Gen *gen;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    if ((a1 <= 0) || (a1 >= m1) || (s1 < 0) || (s1 >= m1) || (m1 <= 0) ||
       (a2 <= 0) || (a2 >= m2) || (s2 < 0) || (s2 >= m2) || (m2 <= 0)) {
@@ -878,7 +876,7 @@ unif01_Gen *ucubic_CreateCombCubic2 (long m1, long m2, long a1, long a2,
 
    gen = util_Malloc (sizeof (unif01_Gen));
 
-   strncpy (name, "ucubic_CreateCombCubic2:", (size_t) LEN);
+   strncpy (name, "ucubic_CreateCombCubic2:", (size_t) SLEN);
    addstr_Long (name, "   m1 = ", m1);
    addstr_Long (name, ",   m2 = ", m2);
    addstr_Long (name, ",   a1 = ", a1);
@@ -929,7 +927,7 @@ unif01_Gen *ucubic_CreateCubicOut (long m, long a, long c, long s)
    CubicOut_param *param;
    CubicOut_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert ((m > 0), "ucubic_CreateCubicOut:   m <= 0");
    util_Assert ((a > 0) && (a < m),
@@ -943,7 +941,7 @@ unif01_Gen *ucubic_CreateCubicOut (long m, long a, long c, long s)
    param = util_Malloc (sizeof (CubicOut_param));
    state = util_Malloc (sizeof (CubicOut_state));
 
-   strncpy (name, "ucubic_CreateCubicOut:", (size_t) LEN);
+   strncpy (name, "ucubic_CreateCubicOut:", (size_t) SLEN);
    addstr_Long (name, "   m = ", m);
    addstr_Long (name, ",   a = ", a);
    addstr_Long (name, ",   c = ", c);
@@ -1051,7 +1049,7 @@ unif01_Gen *ucubic_CreateCubicOutFloat (long m, long a, long c, long s)
    CubicOutFloat_param *param;
    CubicOutFloat_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    double y;
 
    util_Assert ((m > 0), "ucubic_CreateCubicOutFloat:   m <= 0");
@@ -1066,7 +1064,7 @@ unif01_Gen *ucubic_CreateCubicOutFloat (long m, long a, long c, long s)
    param = util_Malloc (sizeof (CubicOutFloat_param));
    state = util_Malloc (sizeof (CubicOutFloat_state));
 
-   strncpy (name, "ucubic_CreateCubicOutFloat:", (size_t) LEN);
+   strncpy (name, "ucubic_CreateCubicOutFloat:", (size_t) SLEN);
    addstr_Long (name, "   m = ", m);
    addstr_Long (name, ",   a = ", a);
    addstr_Long (name, ",   c = ", c);

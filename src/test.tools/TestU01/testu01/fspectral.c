@@ -28,15 +28,17 @@
  *
 \*************************************************************************/
 
+//#include "fspectral.h"
+//#include "ffam.h"
+//#include "fres.h"
+//#include "fcho.h"
+//#include "ftab.h"
+//#include "sspectral.h"
 
-#include "fspectral.h"
-#include "ffam.h"
-#include "fres.h"
-#include "fcho.h"
-#include "ftab.h"
-#include "sspectral.h"
+//#include "num.h"
 
-#include "num.h"
+#include "TestU01/suite.h"
+
 
 long fspectral_Maxn = 4194304;
 

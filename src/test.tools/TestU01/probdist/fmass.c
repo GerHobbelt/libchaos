@@ -36,10 +36,7 @@
 
 #include "TestU01/suite.h"
 
-#include <stddef.h>
-#include <float.h>
-#include <math.h>
-#include <stdlib.h>
+#include <stdio.h>
 
 
 #define TRACE1(N) printf ("*********   " #N " = %d\n", N);

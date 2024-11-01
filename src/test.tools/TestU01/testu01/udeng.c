@@ -17,13 +17,10 @@
 
 #include "TestU01/suite.h"
 
-#include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
 
 
-#define LEN  200                  /* Max length of strings */
+#define SLEN  200                  /* Max length of strings */
 
 static int co1 = 0;               /* Counters */
 
@@ -185,7 +182,7 @@ static unif01_Gen *CreateDenga (unsigned long m, unsigned long b, int k,
    DX02_state *state;
    DX02_param *param;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int j;
 
    gen = util_Malloc (sizeof (unif01_Gen));

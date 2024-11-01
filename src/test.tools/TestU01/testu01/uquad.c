@@ -38,10 +38,6 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <limits.h>
-
 
 
 
@@ -57,7 +53,7 @@
 #endif
 
 #define  MASK32  0xffffffffUL        /* Mask 32 bits */
-#define  LEN 200                     /* Max length of strings */
+#define  SLEN 200                     /* Max length of strings */
 
 
 
@@ -469,7 +465,7 @@ unif01_Gen * uquad_CreateQuadratic (long m, long a, long b, long c, long s)
    Quad_param *param;
    Quad_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    GenStyle1 style;
 
    util_Assert ((a >= 0) && (b >= 0) && (c >= 0) && (s >= 0) &&
@@ -640,7 +636,7 @@ unif01_Gen *uquad_CreateQuadratic2 (int e, unsigned long a, unsigned long b,
    Quad2_param *param;
    Quad2_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    double M;
 
    util_Assert (((a != 0) || (b != 0)) && ((s != 0) || (c != 0)) &&

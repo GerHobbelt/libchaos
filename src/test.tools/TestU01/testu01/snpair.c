@@ -47,13 +47,10 @@
 
 #include "TestU01/suite.h"
 
-#include <math.h>
-#include <limits.h>
-#include <float.h>
-#include <stddef.h>
-#include <string.h>
 
 #undef DEBUG
+
+
 #ifdef DEBUG
 
 #include <stdio.h>
@@ -127,6 +124,7 @@ typedef struct {
 
 
 #if 0
+
 static double t0;
 
 #define xinf 1.0e50

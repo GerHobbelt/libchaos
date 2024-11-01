@@ -46,10 +46,6 @@
 
 #include "TestU01/suite.h"
 
-#include <math.h>
-#include <stddef.h>
-#include <string.h>
-
 
 /*------------------------------ Constants --------------------------------*/
 

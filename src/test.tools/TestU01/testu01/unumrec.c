@@ -37,13 +37,12 @@
 #include "TestU01/suite.h"
 
 #include <stdio.h>
-#include <string.h>
 
 
 
 /*============================== Constants ===============================*/
 
-#define  LEN  100                 /* Max length of strings */
+#define  SLEN  100                 /* Max length of strings */
 
 #define  N_TAB    32
 #define  N_TAB8   40              /* N_TAB + 8 */
@@ -109,7 +108,7 @@ unif01_Gen * unumrec_CreateRan0 (long s)
    Ran0_param *param;
    Ran0_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
 
    util_Assert (s > 0, "unumrec_CreateRan0:   s <= 0");
 
@@ -117,7 +116,7 @@ unif01_Gen * unumrec_CreateRan0 (long s)
    param = util_Malloc (sizeof (Ran0_param));
    state = util_Malloc (sizeof (Ran0_state));
 
-   strncpy (name, "unumrec_CreateRan0:", LEN);
+   strncpy (name, "unumrec_CreateRan0:", SLEN);
    addstr_Long (name, "   s = ", s);
    leng = strlen (name);
    gen->name = util_Calloc (leng + 1, sizeof (char));
@@ -181,7 +180,7 @@ unif01_Gen * unumrec_CreateRan1 (long s)
    Ran0_param *param;
    Ran1_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i;
    long k;
 
@@ -190,7 +189,7 @@ unif01_Gen * unumrec_CreateRan1 (long s)
    param = util_Malloc (sizeof (Ran0_param));
    state = util_Malloc (sizeof (Ran1_state));
 
-   strncpy (name, "unumrec_CreateRan1:", LEN);
+   strncpy (name, "unumrec_CreateRan1:", SLEN);
    addstr_Long (name, "   s = ", s);
    leng = strlen (name);
    gen->name = util_Calloc (leng + 1, sizeof (char));
@@ -289,7 +288,7 @@ unif01_Gen * unumrec_CreateRan2 (long s)
    Ran0_param *param;
    Ran2_state *state;
    size_t leng;
-   char name[LEN + 1];
+   char name[SLEN + 1];
    int i;
    long k;
 
@@ -298,7 +297,7 @@ unif01_Gen * unumrec_CreateRan2 (long s)
    param = util_Malloc (sizeof (Ran0_param));
    state = util_Malloc (sizeof (Ran2_state));
 
-   strncpy (name, "unumrec_CreateRan2:", LEN);
+   strncpy (name, "unumrec_CreateRan2:", SLEN);
    addstr_Long (name, "   s = ", s);
    leng = strlen (name);
    gen->name = util_Calloc (leng + 1, sizeof (char));

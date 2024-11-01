@@ -34,10 +34,6 @@
 
 #include "TestU01/suite.h"
 
-#include <string.h>
-#include <math.h>
-
-
 
 
 /*-------------------------------- Functions ------------------------------*/
