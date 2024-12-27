@@ -6,6 +6,8 @@
 
 #include <chaos.h>
 
+#define BENCHMARK_FAMILY_ID   "chaos"
+
 /// prng ///////////////////////////////////////////////////////////////////////
 
 #define B_PRNG(x)                                                              \
